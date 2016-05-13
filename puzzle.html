@@ -19,6 +19,7 @@
 			<ul>
 				<li><a href="index.html">Главная</a></li>
 				<li><a href="#" class='active_grey'>Загадки</a></li>
+				<li><a href="revolver.html">Русская рулетка</a></li>
 				<li><a href="guess.html">Угадайка</a></li>
 				<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>
 			</ul>    	
@@ -29,20 +30,6 @@
 			<h2>Игра в загадки</h2>
 		</div>
 		<div id="content">
-		
-		<script>
-			function validateComments(input) {
-			   if (input.value.length < 20) {
-				  input.setCustomValidity("Дайте более развернутый ответ.");   
-			   }
-			   else {
-				  // Длина комментария отвечает требованию, 
-				  // поэтому очищаем сообщение об ошибке
-				  input.setCustomValidity("");
-			   }
-			}
-		</script>
-		
 			<h3>Отгадай загадки!</h3>
 			<p>Кого бьют по голове,<br />Чтобы ровно шёл?<p/>
 			<p><input type="text" id="puzzle1" name='puzzle1' autofocus placeholder="Ваш ответ"/></p>

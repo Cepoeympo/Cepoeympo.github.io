@@ -6,7 +6,7 @@
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="favicon.ico">
-	<script type="text/javascript" src="js/guess.js"></script>
+	<script type="text/javascript" src="js/revolver.js"></script>
 </head>
 <body>
 	<div id="tooplate_body_wrapper" />
@@ -19,22 +19,21 @@
 			<ul>
 				<li><a href="index.html">Главная</a></li>
 				<li><a href="puzzle.html">Загадки</a></li>
-				<li><a href="revolver.html">Русская рулетка</a></li>
-				<li><a href="#" class='active_grey'>Угадайка</a></li>
+				<li><a href="#" class='active_grey'>Русская рулетка</a></li>
+				<li><a href="guess.html">Угадайка</a></li>
 				<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>
 			</ul>    	
 		</div>
 	</div>
 	<div id="content_box">	
 		<div id="content_title">
-			<h2>Угадайка</h2>
+			<h2>Русская рулетка</h2>
 		</div>
 		<div id="content">
-			<h3>Кто-то загадал число от 7 до 21. Возьмёшься отгадать?</h3>
-			<p>У тебя будет 666 попыток. После каждой попытки ты узнаешь, правильный ответ больше или меньше твоего.</p>
-			<p>Удачи тебе!</p>
-			<p><input type="button" value="Начать игру!"  class='button' onClick="seven21()"/></p>	
-			<em>*Чтобы прервать игру, просто напиши 'Стоп'</em>
+			<h3>Проверь своё везение!</h3>
+			<p>И понеслась душа в рай...</p>
+			<p><input class='button' type="button" value="Выстрел!" onClick="revolver()"/></p>
+			<em>*Чтобы прервать игру, напиши 'lol'</em>
 		</div>
 		<div id="tooplate_footer">    
 			Copyright © <script>var d = new Date(); document.write(d.getFullYear());
