@@ -10,7 +10,7 @@ function rndm(){
 	
 		var userOneAnswer = prompt('Игрок 1 думает, что это число:');
 		
-		if( (userOneAnswer < 7) ){
+		if( (userOneAnswer < 7) && (userAnswer != null) ){
 			alert('Читайте лучше... НЛО загадало число больше 7!');
 			i++;
 		} else if ( (userOneAnswer > rndm() && userOneAnswer <= 21) ){
@@ -22,7 +22,7 @@ function rndm(){
 		} else if ( (userOneAnswer == rndm() )){
 			alert('НЛО не верит своим глазам... Именно ты сделал это! \nИгрок 1 угадал число с '+i+' раза!');
 			break;
-		} else if ( (userOneAnswer.toLowerCase() == 'хватит' )){
+		} else if ( (userOneAnswer.toLowerCase() == 'хватит' ) || (userAnswer == null)){
 			alert('Ну и ну... Главное - не победа? \nИтого: '+i+' участий =)')
 			break;
 		} else {
