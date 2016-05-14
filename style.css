@@ -4,11 +4,8 @@ body {
 	color: #333333;
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 12px;
-	line-height: 1.5em; 
-	background-color: #0c2436;
-	background-image: url(images/tooplate_wrapper.jpg);
-	background-repeat: repeat-x;
-	background-position: top center;
+	line-height: 1.5em;
+    background: #0c2436 url(images/tooplate_body.jpg) center top no-repeat !important;
 }
 
 a, a:link, a:visited { 
@@ -58,13 +55,11 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 
 #tooplate_body_wrapper {
 	width: 100%;
-	background:  url(images/tooplate_body.jpg) center top no-repeat;
 }
 
 #tooplate_wrapper {
 	width: 800px;
 	margin: 0 auto;
-	background:  url(images/tooplate_body.jpg) center top no-repeat;
 }
 
 #tooplate_header {

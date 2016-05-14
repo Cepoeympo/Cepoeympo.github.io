@@ -30,7 +30,7 @@ window.onload = function() {
                 player_name = player2;
             }
             document.getElementById('result').innerHTML = n;
-            alert('Крутяк! Ты помер аж на ' + n + ' выстреле, ' + player_name + '... Поздравляю!');
+            alert('Крутяк! ' + player_name + ' помер аж на ' + n + ' выстреле... Поздравляю!)');
             document.getElementById('player_name').innerHTML = player1;
             document.getElementById('result').innerHTML = 'снова 0';
             n = 1;
