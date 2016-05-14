@@ -439,3 +439,7 @@ h3 {
 input {
     text-align: center;
 }
+
+#name_output_one, #name_output_two {
+    font-size: 25px;
+}
