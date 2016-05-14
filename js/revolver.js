@@ -11,22 +11,31 @@ window.onload = function() {
         var luck = (Math.floor(Math.random() * (6 - 1 + 1)) + 1);
 
         if ( luck == 3 ) {
+            if ( n % 2 == 1 ) {
+                player_name = player1;
+            }
+            else {
+                player_name = player2;
+            }
             document.getElementById('result').innerHTML = n;
             alert('Крутяк! Ты помер аж на ' + n + ' выстреле, ' + player_name + '... Поздравляю!');
             document.getElementById('player_name').innerHTML = 'Игрок 1';
             document.getElementById('result').innerHTML = 'снова 0';
             n = 1;
+
         } else {
             document.getElementById('player_name').innerHTML = player_name;
             document.getElementById('result').innerHTML = n;
             n++;
         }
-
         if ( n % 2 == 1 ) {
             player_name = player2;
-        } else {
+        }
+        else {
             player_name = player1;
         }
+
+
     }
 };
 
