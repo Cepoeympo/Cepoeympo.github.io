@@ -17,16 +17,13 @@
 	<div id="tooplate_body_wrapper">
 	    <div id="tooplate_wrapper">
         	<div id="tooplate_header">
-                <div id="site_title">
-                    <h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
-                </div>
 	    	<div id="tooplate_menu">
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="puzzle.html">Загадки</a></li>
                     <li><a href="revolver.html">Русская рулетка</a></li>
                     <li><a href="#" class='active_grey'>Угадайка</a></li>
-                    <li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>
+                    <!--<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>-->
                 </ul>
 		    </div>
 	    </div>
@@ -37,8 +34,8 @@
             <div id="content">
                 <h3>Прилетело НЛО и загадало число от 1 до 100. Возьмёшься отгадать?</h3>
                 <p>После каждой попытки ты узнаешь, правильный ответ больше или меньше твоего.</p>
-                <p>Удачи тебе!</p>
-                <p><input type="button" class='button' value="Поехали!" onclick="$('#content').css('display','none'); $('#game_box').css('display','block')"/></p>
+                <p>Удачи, друг!</p>
+                <p><input type="button" class='button' value="Поехали" onclick="$('#content').css('display','none'); $('#game_box').css('display','block')"/></p>
             </div>
 
             <div id="game_box">
@@ -47,14 +44,10 @@
                 </div>
                 <p><input type="number" id="num1" size="1" min="1" max="100" value="50" ></p>
                 <p><input type="range" id="num2" min="1" max="100" step="1" value="50" ></p>
-
-                <script>
-
-                </script>
-                <input type="button" value="Попытать счастье!" id="seven21" class='button button4'/>
-                <input type="button" value="Сдаться.." id="lose" class='button button4'/>
+                <input type="button" value="Ответить" id="seven21" class='button button4'/>
+                <input type="button" value="Сдаться" id="lose" class='button button4'/>
                 <input type="button" class='button button4' id="refresh" value="Обновить" /> <!-- window.location.reload(); -->
-                <input type="button" class='button button4' value="Вернуться к правилам" onclick="$('#content').css('display','block'); $('#game_box').css('display','none')"/>
+                <input type="button" class='button button4' value="Вернуться" onclick="$('#content').css('display','block'); $('#game_box').css('display','none')"/>
             </div>
 
             <div id="tooplate_footer">

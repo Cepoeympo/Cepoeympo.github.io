@@ -15,7 +15,7 @@ window.onload = function () {
     
     document.getElementById('seven21').onclick = function(){
 
-        while (true) {
+        do {
             if ( num1.value == rndm ){
                 i++;
                 document.getElementById("result").innerHTML = 'НЛО не верит своим глазам... Ты сделал это c '+i+' раза! Ура-Ура-Ура!';
@@ -44,11 +44,11 @@ window.onload = function () {
                 i++;
                 break;
             }
-        }
-    }
+        } while (true);
+    };
 
     document.getElementById('lose').onclick = function(){
-        document.getElementById("result").innerHTML = 'Ну и ну... Главное - не победа? Итого: '+ i +' "участий"';
+        document.getElementById("result").innerHTML = 'Эх, а счастье было так близко...';
         num1.style.boxShadow = 'inset 0px 0px 0px red';
         num1.style.border = "2px solid #000";
         num1.style.background = "#000";
@@ -56,18 +56,19 @@ window.onload = function () {
         num1.value = rndm;
         rndm = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
         i = 0;
-    }
+    };
 
     document.getElementById('refresh').onclick = function(){
         i = 0;
         document.getElementById("result").innerHTML = 'Ну попытайся ещё разок..';
         rndm = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
         num1.value = 50;
+        document.getElementById("num2").value = 50;
         num1.style.boxShadow = 'inset 0px 0px 0px red';
         num1.style.border = "2px solid #000";
         num1.style.background = "#fff";
         num1.style.color = "#000";
-     }
+     };
 
 
 };

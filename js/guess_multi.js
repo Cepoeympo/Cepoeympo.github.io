@@ -1,25 +1,23 @@
-function rndm(){
-		return Math.floor(Math.random() * (21 - 7 + 1)) + 7;
-	}
-			
-	function seven21multy(){
+var rndm = Math.floor(Math.random() * (21 - 7 + 1)) + 7;
+
+function seven21multy(){
 	
 	var i = 0;
 
 	while (i != 666) {
 	
-		var userOneAnswer = prompt('Игрок 1 думает, что это число:');
+		var userOneAnswer = prompt('Игрок 1 думает, что это число:','');
 		
-		if( (userOneAnswer < 7) && (userAnswer != null) ){
+		if( (userOneAnswer < 7) ){
 			alert('Читайте лучше... НЛО загадало число больше 7!');
 			i++;
-		} else if ( (userOneAnswer > rndm() && userOneAnswer <= 21) ){
-			alert('Ну это уже перебор.. Давай ещё раз!'+rndm()); //а если 21 ?!
+		} else if ( (userOneAnswer > rndm && userOneAnswer <= 21) ){
+			alert('Ну это уже перебор.. Давай ещё раз!'+rndm); //а если 21 ?!
 			i++;
-		} else if ( (userOneAnswer < rndm() && userOneAnswer >= 7) ){
+		} else if ( (userOneAnswer < rndm && userOneAnswer >= 7) ){
 			alert('Маловато будет.. Давай ещё раз!');
 			i++;
-		} else if ( (userOneAnswer == rndm() )){
+		} else if ( (userOneAnswer == rndm )){
 			alert('НЛО не верит своим глазам... Именно ты сделал это! \nИгрок 1 угадал число с '+i+' раза!');
 			break;
 		} else if ( (userOneAnswer.toLowerCase() == 'хватит' ) || (userAnswer == null)){

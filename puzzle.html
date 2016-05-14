@@ -12,16 +12,13 @@
 	<div id="tooplate_body_wrapper" />
 	<div id="tooplate_wrapper" />
 	<div id="tooplate_header">
-		<div id="site_title">
-			<h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
-		</div>
 		<div id="tooplate_menu">
 			<ul>
 				<li><a href="index.html">Главная</a></li>
 				<li><a href="#" class='active_grey'>Загадки</a></li>
 				<li><a href="revolver.html">Русская рулетка</a></li>
 				<li><a href="guess.html">Угадайка</a></li>
-				<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>
+				<!--<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>-->
 			</ul>    	
 		</div>
 	</div>
@@ -31,11 +28,15 @@
 		</div>
 		<div id="content">
 			<h3>Отгадай загадки!</h3>
-			<p>Кого бьют по голове,<br />Чтобы ровно шёл?<p/>
-			<p><input type="text" id="puzzle1" name='puzzle1' autofocus placeholder="Ваш ответ"/></p>
-			<p>Идёт, а ног нет,<br />Лежит, а постели нет,<br />Лёгкий, а крыши ломит.<br /><p/>
-			<p><input type="text" id="puzzle2" name='puzzle2' placeholder="Ваш ответ"/></p>
-			<p><input class='button' type="button" value="Ответить" onClick="checkAnswers()"/></p>
+            <span class="left_span">
+                <p>Кого бьют по голове,<br />Чтобы ровно шёл?<p/>
+                <p><input type="text" id="puzzle1" name='puzzle1' style="margin-top:18px" autofocus placeholder="Ваш ответ"/></p>
+            </span>
+            <span>
+                <p>Идёт, а ног нет,<br />Лежит, а постели нет,<br />Лёгкий, а крыши ломит.<br /><p/>
+                <p><input type="text" id="puzzle2" name='puzzle2' placeholder="Ваш ответ"/></p>
+                <p><input class='button' type="button" value="Ответить" onClick="checkAnswers()"/></p>
+            </span>
 		</div>
 		<div id="tooplate_footer">    
 			Copyright © <script>var d = new Date(); document.write(d.getFullYear());

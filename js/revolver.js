@@ -1,19 +1,27 @@
 /* ------ Револьверка ------ */
-function revolver(){
+window.onload = function(){
+    document.getElementById('revolver').onclick = function () {
 
-	var n = 0;
+        var fire = 0;
 
-	do {
-		var x = prompt('Введите lol, что бы сдаться!');
+        var change_name = 0;
+        /*
+         change_name++
+         change_name--
+         == 1) {}
+         != 1) {}
+         */
+        do {
+            if ((Math.floor(Math.random() * (7))) < 1) {
+                alert('Крутяк! ты помер аж на ' + n + ' выстреле');
+                break;
+            }
 
-		if ( x == 'lol' ) {
-			alert('Тюфяк! Всего раундов: ' + n);
-			break;
-		} else if ( ( x != 'lol' ) && ( ( Math.random() * 6 ) < 1 ) ) {
-			alert('Крутяк! Всего раундов: ' + n);
-			break;
-		} 
-		
-		n++;
-	} while(true);
-}
+            n++;
+        } while (true);
+
+        alert((Math.floor(Math.random() * (7))));
+    }
+};
+
+//( Math.random() * 6 ) < 1 )

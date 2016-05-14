@@ -39,15 +39,15 @@ em { color: #000; font-weight: 400 }
 h1, h2, h3, h4, h5, h6 { color: #000; font-weight: normal;  }
 h1 { font-size: 34px; margin: 0 0 20px; padding: 5px 0 }
 h2 { font-size: 28px; margin: 0 0 20px; padding: 5px 0 10px 0; color: #fff }
-h3 { font-size: 20px; margin: 0 0 15px; padding: 0; }
-h4 { font-size: 18px; margin: 0 0 15px; padding: 0; }
+h3 { font-size: 20px; margin: 0 50px; padding: 0; }
+h4 { font-size: 18px; margin: 0 50px; padding: 0; }
 h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
 h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 
 
 #image_wrapper { 
 	display: inline-block; 
-	border: 1px solid #ccc; 
+	border: 2px solid #ccc; 
 	padding: 3px; 
 	background: #000; 
 	float: left; 
@@ -115,7 +115,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 #tooplate_menu ul li a {
 	float: left;
 	display: block;
-	width: 105px;
+    width: 125px;
 	height: 66px;
 	line-height: 29px;
 	font-size: 14px;
@@ -192,7 +192,7 @@ a.gototop:hover {
 
 .post_header { 
 	border-top: 3px solid #999; 
-	border-bottom: 1px solid #ccc; 
+	border-bottom: 2px solid #ccc; 
 	padding: 5px; 
 	margin-bottom: 20px; 
 }
@@ -208,7 +208,7 @@ a.gototop:hover {
 	margin-right: 15px; 
 	width: 80px; 
 	height: 80px; 
-	padding-bottom: 11px; 
+	padding-bottom: 12px; 
 	background: url(images/tooplate_post_img_bg.jpg) no-repeat; 
 }
 
@@ -228,13 +228,12 @@ a.gototop:hover {
 	padding: 0;
 }
 
-#gallery ul li { 
-	display: block; 
+#gallery ul li {
 	position: relative; 
 	display: inline-block; 
 	width: 300px; 
 	height: 168px; 
-	margin: 0 15px 30px 15px; 
+	margin: 50px 30px 15px; 
 }
 
 #gallery ul img { 
@@ -269,7 +268,7 @@ a.gototop:hover {
 	width: 240px; 
 	padding: 5px; 
 	color: #666; 
-	border: 1px solid #b6b6b6;  
+	border: 2px solid #b6b6b6;  
 	background: #fff; 
 	font-family: Tahoma, Geneva, sans-serif; 
 	font-size: 12px; 
@@ -287,7 +286,7 @@ a.gototop:hover {
 	height: 150px; 
 	padding: 5px; 
 	color: #666; 
-	border: 1px solid #b6b6b6;  
+	border: 2px solid #b6b6b6;  
 	background: #fff; 
 	font-family: Tahoma, Geneva, sans-serif; 
 	font-size: 12px; 
@@ -297,7 +296,7 @@ a.gototop:hover {
 	background: #559402; 
 	color: #fff; 
 	cursor:pointer; 
-	border: 1px solid #3d6b00; 
+	border: 2px solid #3d6b00; 
 	padding: 2px 5px; 
 }
 
@@ -330,11 +329,11 @@ input {
     height: 400px;
     background: url(images/tooplate_content.png) repeat-y;
     font-size: 15px;
+    text-align: center;
 }
 
 #num1 {
     padding-left: 30px;
-    margin-left: 43%;
     font-size: 30px;
     height: 40px;
     width: 10%;
@@ -350,23 +349,21 @@ input {
 
 .button {
 	background: #69B900;
-	padding: 7px 30px;
 	font-size: 24px;
 	height: 44px;
-    margin-left: 25%;
     width: 50%;
 	font-weight: bold;
 	color: #FFFFFF;
 	text-align: center;
-	border: solid 1px #62AD01;;
+	border: solid 2px #62AD01;;
 	cursor: pointer;
 	background: -moz-linear-gradient(0% 100% 90deg, #69B900, #82D615);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#82D615), to(#69B900));
-	box-shadow: inset 0 1px 0 0 #FFFFFF;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-	border-bottom: 1px solid rgba(0,0,0,0.25); 
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	box-shadow: inset 0 2px 0 0 #FFFFFF;
+	-moz-box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+	border-bottom: 2px solid rgba(0,0,0,0.25); 
+	text-shadow: 0 -2px 2px rgba(0,0,0,0.25);
 }
 	
 .button:hover { 
@@ -380,16 +377,15 @@ input {
     background: -moz-linear-gradient(0% 100% 90deg, #569702, #6CC000);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6CC000), to(#569702));
 	to(#2E69E3));
-	box-shadow: inset 1px 1px 0 0 #004A7F;
-	-moz-box-shadow: inset 1px 1px 0 0 #004A7F;
-	-webkit-box-shadow: inset 1px 1px 0 0 #004A7F;
-    padding: 7px 30px;
+	box-shadow: inset 2px 2px 0 0 #004A7F;
+	-moz-box-shadow: inset 2px 2px 0 0 #004A7F;
+	-webkit-box-shadow: inset 2px 2px 0 0 #004A7F;
 }
 
 .button4{
     margin: 15px 4%;
     width: 41%;
-    font-size: 21px;
+    font-size: 22px;
 }
 
 em {
@@ -401,7 +397,41 @@ em {
 }
 
 #result {
-    text-align: center;
     margin-bottom: 20px;
     font-size: 20px;
+}
+
+.left_span {
+    float: left;
+    margin: 0 100px 15px 130px;
+}
+
+#fire {
+    width:150px;
+    height:150px;
+    border: 0 solid black;
+    border-radius: 75px;
+    background: red;
+    box-shadow: 0 0 50px #000;
+    -moz-box-shadow: 0 0 50px #000;
+    -webkit-box-shadow: 0 0 50px #000;
+}
+
+#fire:active {
+    box-shadow: 0 0 15px #000;
+    -moz-box-shadow: 0 0 15px #000;
+    -webkit-box-shadow: 0 0 15px #000;
+    background: rgb(230, 12, 12);
+    color: #EAEAEA;
+}
+
+.oneofthree {
+    float: left;
+    width: 33%;
+    height: 150px;
+    margin: 50px 0;
+}
+
+h3 {
+    margin: 0 0 20px;
 }
