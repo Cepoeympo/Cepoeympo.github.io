@@ -7,21 +7,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="favicon.ico">
 	<script type="text/javascript" src="js/revolver.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
 </head>
 <body>
-	<div id="tooplate_body_wrapper" />
-	<div id="tooplate_wrapper" />
+	<div id="tooplate_body_wrapper">
+	<div id="tooplate_wrapper">
 	<div id="tooplate_header">
-		<div id="site_title">
-			<h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
-		</div>
 		<div id="tooplate_menu">
 			<ul>
 				<li><a href="index.html">Главная</a></li>
 				<li><a href="puzzle.html">Загадки</a></li>
 				<li><a href="#" class='active_grey'>Русская рулетка</a></li>
 				<li><a href="guess.html">Угадайка</a></li>
-				<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>
+				<!--<li><a href="guess_multi.html">Угадайка (мультиплеер)</a></li>-->
 			</ul>    	
 		</div>
 	</div>
@@ -30,15 +28,34 @@
 			<h2>Русская рулетка</h2>
 		</div>
 		<div id="content">
-			<h3>Проверь своё везение!</h3>
-			<p>И понеслась душа в рай...</p>
-			<p><input class='button' type="button" value="Выстрел!" onClick="revolver()"/></p>
-			<em>*Чтобы прервать игру, напиши 'lol'</em>
+			<h3>Есть револьвер и только 1 патрон...</h3>
+			<p>Проверь своё везение!</p>
+			<p><input class='button' type="button" value="Понеслась душа в рай" id="revolver" onclick="$('#content').css('display','none'); $('#game_box').css('display','block')"/></p>
+        </div>
+        <div id="game_box">
+           <h3>
+                Обстановка накалилась... И <span id="player_name">Игрок 1</span> спускает курок!
+            </h3>
+            <p>Сделано выстрелов: <span id="result">пока 0</span></p>
+            <div class="oneofthree" >
+                Игрок 1
+            </div>
+            <div class="oneofthree" >
+                <input type="button" value="*BANG*" id="fire" class='button'/>
+            </div>
+            <div class="oneofthree" >
+                Игрок 2
+            </div>
+
+            <input type="button" class='button' value="Вернуться к правилам" onclick="$('#content').css('display','block'); $('#game_box').css('display','none')"/>
+        </div>
 		</div>
 		<div id="tooplate_footer">    
 			Copyright © <script>var d = new Date(); document.write(d.getFullYear());
             </script> <a href="http://geekbrains.ru">GeekBrains</a>
 		</div>
+        </div>
+        </div>
 	</div> <!-- end of warpper -->
 </body>
 </html>

@@ -1,27 +1,32 @@
 /* ------ Револьверка ------ */
-window.onload = function(){
-    document.getElementById('revolver').onclick = function () {
+window.onload = function() {
 
-        var fire = 0;
+    var n = 1;
+    var player1 = 'Игрок 1';
+    var player2 = 'Игрок 2';
+    var player_name = player2;
 
-        var change_name = 0;
-        /*
-         change_name++
-         change_name--
-         == 1) {}
-         != 1) {}
-         */
-        do {
-            if ((Math.floor(Math.random() * (7))) < 1) {
-                alert('Крутяк! ты помер аж на ' + n + ' выстреле');
-                break;
-            }
+    document.getElementById('fire').onclick = function () {
 
+        var luck = (Math.floor(Math.random() * (6 - 1 + 1)) + 1);
+
+        if ( luck == 3 ) {
+            document.getElementById('result').innerHTML = n;
+            alert('Крутяк! Ты помер аж на ' + n + ' выстреле, ' + player_name + '... Поздравляю!');
+            document.getElementById('player_name').innerHTML = 'Игрок 1';
+            document.getElementById('result').innerHTML = 'снова 0';
+            n = 1;
+        } else {
+            document.getElementById('player_name').innerHTML = player_name;
+            document.getElementById('result').innerHTML = n;
             n++;
-        } while (true);
+        }
 
-        alert((Math.floor(Math.random() * (7))));
+        if ( n % 2 == 1 ) {
+            player_name = player2;
+        } else {
+            player_name = player1;
+        }
     }
 };
 
-//( Math.random() * 6 ) < 1 )
