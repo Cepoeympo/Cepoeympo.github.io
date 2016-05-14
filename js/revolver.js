@@ -6,6 +6,18 @@ window.onload = function() {
     var player2 = 'Игрок 2';
     var player_name = player2;
 
+    document.getElementById('first_name').oninput = function name_one (){
+        document.getElementById('name_output_one').innerHTML = document.getElementById('first_name').value;
+        player1 = document.getElementById('first_name').value;
+        document.getElementById('player_name').innerHTML = player1;
+    };
+
+    document.getElementById('second_name').oninput = function name_two (){
+        document.getElementById('name_output_two').innerHTML = document.getElementById('second_name').value;
+        player2 = document.getElementById('second_name').value;
+        player_name = player2;
+    };
+
     document.getElementById('fire').onclick = function () {
 
         var luck = (Math.floor(Math.random() * (6 - 1 + 1)) + 1);
@@ -19,7 +31,7 @@ window.onload = function() {
             }
             document.getElementById('result').innerHTML = n;
             alert('Крутяк! Ты помер аж на ' + n + ' выстреле, ' + player_name + '... Поздравляю!');
-            document.getElementById('player_name').innerHTML = 'Игрок 1';
+            document.getElementById('player_name').innerHTML = player1;
             document.getElementById('result').innerHTML = 'снова 0';
             n = 1;
 
