@@ -29,6 +29,7 @@ body{
 }
 
 .container {
+   max-width: 970px;
    padding-left: 0;
    padding-right: 0;
 }
@@ -111,7 +112,7 @@ body{
 }
 
 #experience {
-  height: 1580px;
+  min-height: 1580px;
   @extend .border_border_bottom_padding;
   border-left: 0 solid white;
 

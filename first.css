@@ -20,6 +20,7 @@ body {
   background: url("cream_pixels.png"); }
 
 .container {
+  max-width: 970px;
   padding-left: 0;
   padding-right: 0; }
 
@@ -78,7 +79,7 @@ body {
   color: #7B7B7B; }
 
 #experience {
-  height: 1580px;
+  min-height: 1580px;
   border-left: 0 solid white; }
   #experience .experience_description {
     text-indent: 45px; }
