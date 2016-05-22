@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico">
+	<script type="text/javascript" src="js/guess_multi.js"></script>
+</head>
+<body>
+	<div id="tooplate_body_wrapper" />
+	<div id="tooplate_wrapper" />
+	<div id="tooplate_header">
+		<div id="site_title">
+			<h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
+		</div>
+		<div id="tooplate_menu">
+			<ul>
+				<li><a href="index.html">Главная</a></li>
+				<li><a href="puzzle.html">Загадки</a></li>
+				<li><a href="revolver.html">Русская рулетка</a></li>
+				<li><a href="guess.html">Угадайка</a></li>
+				<li><a href="#" class='active_grey'>Угадайка (мультиплеер)</a></li>
+			</ul>    	
+		</div>
+	</div>
+	<div id="content_box">	
+		<div id="content_title">
+			<h2>Угадайка (мультиплеер)</h2>
+		</div>
+		<div id="content">
+			<h3>Прелетело НЛО и загадало число от 7 до 21. Возьмётесь отгадать?</h3>
+			<p>У вас будет 666 попыток. После каждой попытки вы узнаете, правильный ответ больше или меньше названного.</p>
+			<p>Удачи, ребята!</p>
+			<p><input type="button" value="Начать игру!"  class='button' onClick="seven21multy()"/></p>	
+			<em>*Чтобы прервать игру, просто напишите 'Хватит' или нажми 'Отмена'</em>
+			<p>
+				<script>
+					/*for (i = 0; i < 100; i++){
+						document.write(rndm()+'<br />');
+					}*/
+				</script>
+			</p>
+		</div>
+		<div id="tooplate_footer">    
+			Copyright © <script>var d = new Date(); document.write(d.getFullYear());
+            </script> <a href="http://geekbrains.ru">GeekBrains</a>
+		</div>
+	</div> <!-- end of warpper -->
+</body>
+</html>

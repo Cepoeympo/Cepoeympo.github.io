@@ -1,0 +1,109 @@
+.border_border_bottom, #name, #about_me {
+  border: 2px solid #000;
+  border-bottom: 0; }
+
+.border_border_bottom_padding, #skill, #education, #experience, #hobby {
+  border: 2px solid #000;
+  border-bottom: 0;
+  padding: 0 45px 45px; }
+
+/* ----- Bootstrap ----- */
+.row {
+  margin: 0; }
+
+[class*=col] {
+  margin: 0;
+  padding: 0; }
+
+/* ----- Bootstrap End ----- */
+body {
+  background: url("cream_pixels.png"); }
+
+.container {
+  padding-left: 0;
+  padding-right: 0; }
+
+.pix50 {
+  height: 50px; }
+
+#wrapper {
+  padding: 30px;
+  max-width: 970px;
+  background: #fff;
+  font-family: 'Century Gothic';
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3); }
+  #wrapper h1 {
+    margin-top: 46px;
+    line-height: 50px;
+    letter-spacing: 17px;
+    text-transform: uppercase; }
+  #wrapper h4 {
+    margin-top: -30px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-size: 19px; }
+
+#name {
+  background: #000;
+  text-transform: uppercase;
+  color: #fff;
+  min-height: 150px;
+  padding-bottom: 40px; }
+
+#about_me {
+  padding: 0 40px 45px; }
+  #about_me p {
+    text-align: justify;
+    text-indent: 45px; }
+
+#skill {
+  text-transform: uppercase;
+  height: 790px; }
+  #skill h5 {
+    margin-top: 15px; }
+
+#education {
+  height: 790px; }
+
+.education_header {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 30px; }
+
+.education_place {
+  margin: -8px auto 2px; }
+
+.education_year {
+  color: #7B7B7B; }
+
+#experience {
+  height: 1580px;
+  border-left: 0 solid white; }
+  #experience .experience_description {
+    text-indent: 45px; }
+  #experience .experience_description {
+    text-align: justify; }
+
+#hobby {
+  min-height: 200px; }
+
+#footer {
+  height: 70px;
+  background: #000;
+  border: 2px solid #000;
+  padding: 0 45px 45px; }
+
+@media (max-width: 768px) {
+  #experience {
+    border-left: 2px solid #000; } }
+.header_square {
+  background: #ECEBE6;
+  border: 2px solid black;
+  width: 180px;
+  padding: 0 10px;
+  min-height: 40px;
+  margin: -21px auto 0; }
+
+.wide {
+  width: 550px; }
