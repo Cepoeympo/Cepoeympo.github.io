@@ -58,7 +58,7 @@ body {
 
 #skill {
   text-transform: uppercase;
-  height: 790px; }
+  height: 860px; }
   #skill h5 {
     margin-top: 15px; }
 
@@ -78,7 +78,7 @@ body {
   color: #7B7B7B; }
 
 #experience {
-  min-height: 1580px;
+  min-height: 1650px;
   border-left: 0 solid white; }
   #experience .experience_description {
     text-indent: 45px; }

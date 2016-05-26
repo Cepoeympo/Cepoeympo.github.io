@@ -78,11 +78,11 @@ body{
     }
 }
 
-//educationn
+//education
 
 #skill {
 	text-transform: uppercase;
-	height: 790px;
+    height: 860px;
 	@extend .border_border_bottom_padding;
 
     h5{
@@ -111,7 +111,7 @@ body{
 }
 
 #experience {
-  min-height: 1580px;
+  min-height: 1650px;
   @extend .border_border_bottom_padding;
   border-left: 0 solid white;
 
