@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0; }
 
-/* ----- Bootstrap End ! ----- */
+/* ----- Bootstrap End ----- */
 body {
   background: url("cream_pixels.png") fixed; }
 
@@ -112,6 +112,15 @@ body {
   #education {
     height: 1011px; } }
 @media (max-width: 768px) {
+  #wrapper {
+    padding: 0; }
+
+  #wrapper h1 {
+    font-size: 33px; }
+
+  #about_me, #experience, #skill, #education {
+    padding: 0 20px 45px; }
+
   #experience {
     border-left: 2px solid #000;
     min-height: 0; }
