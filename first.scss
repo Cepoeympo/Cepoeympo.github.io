@@ -129,8 +129,9 @@ img {
   @extend .border_border_bottom_padding;
 
   img{
-    margin: 0 1% 20px;
-    max-width:23%;
+    margin: 0 2% 20px;
+    max-width: 28%;
+    display: inline-block;
   }
 }
 /*
@@ -170,7 +171,7 @@ img {
   #certificates {
     img{
       margin: 0 2% 20px;
-      max-width: 46%;
+      max-width: 45%;
     }
   }
 }
