@@ -54,9 +54,10 @@ gulp.task('uncss', function () {
 gulp.task('watch', function(){
 	gulp.watch('*.scss', ['css', 'uncss']);
 	gulp.watch('*.html', ['html']);
+    gulp.watch('js/*.js', ['js']);
 });
 
 // default
-gulp.task('default', ['connect', 'watch', 'html', 'css', 'uncss', 'js']);
+gulp.task('default', ['connect', 'watch', 'html', 'css', 'js', 'uncss']);
 
 // The End
