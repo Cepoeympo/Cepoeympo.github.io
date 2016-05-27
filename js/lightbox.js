@@ -45,9 +45,9 @@
     fitImagesInViewport: true,
     // maxWidth: 800,
     // maxHeight: 600,
-    positionFromTop: 50,
+    positionFromTop: 60,
     resizeDuration: 700,
-    showImageNumberLabel: true,
+    showImageNumberLabel: false,
     wrapAround: false,
     disableScrolling: false
   };

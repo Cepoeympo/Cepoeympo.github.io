@@ -23,6 +23,12 @@ gulp.task('html', function(){
 		  .pipe(connect.reload());
 });
 
+// js
+gulp.task('js', function(){
+    return gulp.src('js/*.js')
+        .pipe(connect.reload());
+});
+
 // css
 gulp.task('css', function(){
      gulp.src('*.scss')
@@ -51,4 +57,4 @@ gulp.task('watch', function(){
 });
 
 // default
-gulp.task('default', ['connect', 'watch', 'html', 'css', 'uncss']);
+gulp.task('default', ['connect', 'watch', 'html', 'css', 'uncss', 'js']);
