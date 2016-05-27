@@ -129,7 +129,8 @@ img {
   @extend .border_border_bottom_padding;
 
   img{
-    padding: 0 10px 20px;
+    margin: 0 1% 20px;
+    max-width:23%;
   }
 }
 /*
@@ -166,6 +167,12 @@ img {
   #education {
     height: 1011px;
   }
+  #certificates {
+    img{
+      margin: 0 2% 20px;
+      max-width: 46%;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -187,13 +194,14 @@ img {
     height: auto;
   }
   #certificates img {
-    padding: 0 0 20px;
+    margin: 0 0 20px;
+    max-width: 100%;
   }/*
   #certificates img:first-child {
     padding: 0 10px 60px;
   }*/
-  #certificates img:last-child {
-    padding: 0 10px 60px;
+  #certificates a:last-child img {
+    margin: 0 0 60px;
   }
   .wide {
     min-width: 220px;
