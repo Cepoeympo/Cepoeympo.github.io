@@ -137,14 +137,14 @@ img {
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -webkit-filter: grayscale(100%);
-    filter: grayscale(100%); /* Чёрно-белое изображение */
+    filter: grayscale(100%);
   }
   img:hover{
     -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
     box-shadow:  0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
     -webkit-filter: grayscale(0%);
-    filter: grayscale(0%); /* Чёрно-белое изображение */
+    filter: grayscale(0%);
   }
 }
 /* ////////////// AnimateCss
@@ -182,6 +182,11 @@ img {
   min-width:550px;
 }
 
+a.disabled {
+  pointer-events: none; /* делаем ссылку некликабельной */
+  cursor: default;  /* устанавливаем курсор в виде стрелки */
+  color: #999; /* цвет текста для нективной ссылки */
+}
 
 @media (max-width: 992px){
   #skill {
@@ -219,6 +224,8 @@ img {
   #certificates img {
     margin: 0 0 20px;
     max-width: 100%;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
   }/*
   #certificates img:first-child {
     padding: 0 10px 60px;
