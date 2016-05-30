@@ -136,32 +136,15 @@ img {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }
   img:hover{
     -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
     box-shadow:  0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
-    -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
   }
 }
-/* ////////////// AnimateCss
-.certificate{
-  display:none;
-}
-*/
-/*
-#hobby {
-	@extend .border_border_bottom_padding;
-}
-
-.hobby{
-  width: 19%;
-  display: inline-block;
-}
-*/
 #footer {
 	height: 70px;
 	background:#000;
@@ -193,9 +176,6 @@ a.disabled {
   #skill {
     height: 859px;
   }
-  #education {
-    height: 1074px;
-  }
   #certificates {
     img{
       margin: 0 2% 20px;
@@ -225,15 +205,8 @@ a.disabled {
   #certificates img {
     margin: 0 0 20px;
     max-width: 100%;
-    -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
-  }/*
-  #certificates img:first-child {
-    padding: 0 10px 60px;
   }
-  #certificates a:last-child img {
-    margin: 0 0 60px;
-  }*/
   .hobby{
     width: 49%;
     display: inline-block;
