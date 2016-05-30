@@ -46,10 +46,10 @@ img {
 	padding:30px;
 	max-width:970px;
 	background: #fff;
-	font-family: 'Century Gothic', Arial, monospace ;
+	font-family: 'Century Gothic', Arial, sans-serif;
 	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 
-      h1 {
+  h1 {
         margin-top: 46px;
         line-height: 50px;
         letter-spacing: 17px;
@@ -165,6 +165,7 @@ img {
 #footer {
 	height: 70px;
 	background:#000;
+	background:linear-gradient(45deg, #010, #555);
 	border:$border;
 	padding: $padding_all_box;
 }

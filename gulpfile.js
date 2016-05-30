@@ -31,9 +31,9 @@ gulp.task('js', function(){
 
 // css
 gulp.task('css', function(){
-     gulp.src('*.scss')
+     gulp.src('first.scss')
 		  .pipe(sass())
-          .pipe(autoprefixer({browsers: ['last 2 versions', '>1%', 'ie 8']}))
+          .pipe(autoprefixer({browsers: ['last 15 versions']}))
 		  .pipe(cleanCSS({compatibility: 'ie8'}))
           .pipe(gulp.dest(''))
 		  .pipe(connect.reload());
