@@ -25,7 +25,7 @@ gulp.task('html', function(){
 
 // js
 gulp.task('js', function(){
-    return gulp.src('js/*.js')
+    gulp.src('js/*.js')
         .pipe(connect.reload());
 });
 
