@@ -84,7 +84,7 @@ img {
 
 #skill {
 	text-transform: uppercase;
-    height: 860px;
+//    height: 860px;
 	@extend .border_border_bottom_padding;
 
     h5{
@@ -93,7 +93,7 @@ img {
 }
 
 #education {
-    height: 790px;
+//    height: 790px;
 	@extend .border_border_bottom_padding;
 }
 
@@ -113,7 +113,7 @@ img {
 }
 
 #experience {
-  min-height: 1650px;
+  min-height: 1627px;
   @extend .border_border_bottom_padding;
   border-left: 0 solid white;
 
@@ -172,12 +172,17 @@ a.disabled {
   color: #999; /* цвет текста для нективной ссылки */
 }
 
+.item {
+  display: block;
+  float: left;
+}
+
 @media (max-width: 992px){
   #skill {
-    height: 859px;
+    min-height: 950px;
   }
   #education {
-    height: 1074px;
+    min-height: 983px;
   }
   #certificates {
     img{
@@ -202,8 +207,8 @@ a.disabled {
     min-height: 0;
   }
   #skill,#education {
-    min-height: 0;
-    height: auto;
+//    min-height: 0;
+//    height: auto;
   }
   #certificates img {
     margin: 0 0 20px;
