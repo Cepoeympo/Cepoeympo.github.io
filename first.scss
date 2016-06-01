@@ -156,8 +156,6 @@ img {
     margin: 0 2% 20px;
     max-width: 28%;
     display: inline-block; ////////////// comment for AnimateCss
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     filter: grayscale(100%);
   }
@@ -197,12 +195,26 @@ a.disabled {
 
 #footer {
 
-  i {
+  .fa-gamepad, .fa-print {
     position: absolute;
-    right: 13px;
-    bottom: 10px;
     color: #ECEBE6;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .fa-gamepad {
+    left: 13px;
+    bottom: 7px;
+    color: blue;
+  }
+
+  .fa-print {
+    right: 13px;
+    bottom: 10px;
+  }
+
+  .fa-print:hover,.fa-gamepad:hover {
+    color: #fff;
   }
 }
 
