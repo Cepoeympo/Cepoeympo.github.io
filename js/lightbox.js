@@ -38,7 +38,7 @@
 
   // Descriptions of all options available on the demo site:
   // http://lokeshdhakar.com/projects/lightbox2/index.html#options
-  Lightbox.defaults = {
+Lightbox.defaults = {
     albumLabel: 'Image %1 of %2',
     alwaysShowNavOnTouchDevices: false,
     fadeDuration: 500,
@@ -70,8 +70,8 @@
   Lightbox.prototype.enable = function() {
     var self = this;
     $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
-            self.start($(event.currentTarget));
-            return false;
+      self.start($(event.currentTarget));
+      return false;
     });
   };
 
@@ -451,6 +451,3 @@
 
   return new Lightbox();
 }));
-
-
-// The End
