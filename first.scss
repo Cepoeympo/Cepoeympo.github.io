@@ -136,7 +136,7 @@ img {
 }
 
 #experience {
-  min-height: 1627px;
+  min-height: 1650px;
   @extend .border_border_bottom_padding;
   border-left: 0 solid white;
 
@@ -172,7 +172,6 @@ img {
 #footer {
   height: 70px;
   background: #000;
-  background: linear-gradient(45deg, #010, #555);
   border: $border;
   padding: $padding_all_box;
 }
@@ -194,6 +193,16 @@ a.disabled {
   pointer-events: none; /* делаем ссылку некликабельной */
   cursor: default; /* устанавливаем курсор в виде стрелки */
   color: #999; /* цвет текста для нективной ссылки */
+}
+
+#footer {
+
+  i {
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+    color: #ECEBE6;;
+  }
 }
 
 @media (max-width: 992px) {
@@ -250,4 +259,43 @@ a.disabled {
   }
 }
 
+@media print {
+
+  #name {
+    border-bottom: 2px solid black;
+  }
+  #about_me {
+    margin-top: 60px;
+  }
+  .header_square {
+    margin: -1px auto 30px;
+    border: 1px solid black;
+  }
+
+  .wide {
+    margin-top:12px;
+    min-width: 550px;
+    border: none;
+  }
+
+  .skills_4_print {
+    display: inline-block;
+    width: 32%;
+  }
+
+  #certificates, #education, #about_me, #experience, #skill, .border_border_bottom_padding {
+    border-top: 1px solid black;
+  }
+
+  #footer {
+
+    i {
+      display: none;
+    }
+  }
+
+  .visible-print {
+    display: inline;
+  }
+}
 // The End
