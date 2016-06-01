@@ -199,7 +199,7 @@ a.disabled {
 
   .fa-gamepad, .fa-print {
     position: absolute;
-    color: #ECEBE6;
+    color: #c2c2c2;// #ECEBE6;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
@@ -207,7 +207,6 @@ a.disabled {
   .fa-gamepad {
     left: 13px;
     bottom: 7px;
-    color: blue;
   }
 
   .fa-print {
@@ -216,7 +215,7 @@ a.disabled {
   }
 
   .fa-gamepad:hover, .fa-print:hover {
-    color:#fff;
+    color:#ECEBE6;
   }
 }
 
