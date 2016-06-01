@@ -267,6 +267,14 @@ a.disabled {
   #about_me {
     margin-top: 60px;
   }
+#education {
+
+  .education_year, .education_place {
+    display: inline;
+  }
+
+}
+
   .header_square {
     margin: -1px auto 30px;
     border: 1px solid black;
