@@ -241,8 +241,9 @@ input[type=range]:focus::-ms-fill-lower {
 @media handheld {
   .modal-dialog {
 	width: 100%;
-	height: 100%;
-	margin: 160px auto 0;
+	position: fixed;
+	bottom: -90px;
+	margin-top: 0;
   }
   #game_box p {
 	margin: 0 0 35px;
