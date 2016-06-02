@@ -550,14 +550,21 @@ Lightbox.defaults = {
   return new Lightbox();
 }));
 
-/**
- * Created by Duke on 02.06.2016.
- */
+function displayNonePlusBlock() {
+	$('#content').css('display', 'none');
+	$('#game_box').css('display', 'block');
+}
+
+function displayNonePlusBlock() {
+	$('#content').css('display', 'block');
+	$('#game_box').css('display', 'none');
+}
+
 function printsite() {
     if (navigator.platform == "Win32") {
         window.print();
     }
     else {
-        alert("print out this page by hitting command + p");
+        alert("Попробуйте распечатать через Ctrl + P");
     }
 }
