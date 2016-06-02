@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="bootstrap/css/min/bootstrap.min.css">
     <link rel="stylesheet" href='bootstrap/css/min/bootstrap.flatly.min.css'>
     <link rel="stylesheet" href='css/first.min.css'>
-    <link href="css/lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/lightbox.css">
 </head>
 <body>
 <div class="container">
@@ -354,7 +354,50 @@
                 <div class="header_square wide">
                     <h4 class='header'>+7(926)990-22-26<span class="hidden-print"> / <a href="mailto:79269902226@ya.ru">79269902226@ya.ru</a> / </span><span class="visible-print"> 79269902226@ya.ru</span> @Cepoeympo </h4>
                 </div>
-                <i class="fa fa-gamepad fa-inverse fa-3x"></i>
+                <i class="fa fa-gamepad fa-inverse fa-3x" data-toggle="modal" data-target="#myModal"></i>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Guess</h4>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <div id="content">
+                                    <h3 id="UFO_title">НЛО прилетело и загадало число от 1 до 100. Возьмёшься отгадать?</h3>
+                                    <p>После каждой попытки ты узнаешь, правильный ответ больше или меньше твоего.</p>
+                                    <p>Удачи, друг!</p>
+                                    <p><input type="button" class='btn btn-default' value="Поехали" onclick="$('#content').css('display','none'); $('#game_box').css('display','block')"/></p>
+                                </div>
+
+                                <div id="game_box">
+                                    <div id="result">
+                                        Можешь начинать..
+                                    </div>
+                                    <p><input title="Your number" type="number" id="num1" size="1" min="1" max="100" value="50" ></p>
+                                    <p><input title="Your number" type="range" id="num2" min="1" max="100" step="1" value="50" ></p>
+                                    <button type="button" class="btn btn-success" id="seven21">Ответить</button>
+                                    <button type="button" class="btn btn-danger" id="lose">Сдаться</button>
+                                    <button type="button" class="btn btn-info" id="refresh">Обновить</button>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="$('#content').css('display','block'); $('#game_box').css('display','none');">Закрыть</button>
+                            </div>
+                                <div class="modal-footer">
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+
+
                 <i class="fa fa-print fa-inverse fa-3x print hidden-xs" onclick="printsite();"></i>
             </div>
         </div>
@@ -366,10 +409,15 @@
 <script src="js/html5shiv.min.js"></script>
 <script src="js/respond.min.js"></script>
 <![endif] -->
-<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/main.min.js"></script>
 <script src="js/77601d11.js"></script>
+
+
+
+
+
 </body>
 </html>
 <!-- The End -->
