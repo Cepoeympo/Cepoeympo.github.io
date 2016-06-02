@@ -231,7 +231,7 @@ input[type=range]:focus::-ms-fill-lower {
   -webkit-appearance: none; outline: none;
 }
 
-@media (max-width: 768px) {
+@media handheld {
   .modal-dialog {
 	margin-top: 200px;
   }
