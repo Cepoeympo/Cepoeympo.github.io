@@ -550,16 +550,6 @@ Lightbox.defaults = {
   return new Lightbox();
 }));
 
-function displayNonePlusBlock() {
-	$('#content').css('display', 'none');
-	$('#game_box').css('display', 'block');
-}
-
-function displayNonePlusBlock() {
-	$('#content').css('display', 'block');
-	$('#game_box').css('display', 'none');
-}
-
 function printsite() {
     if (navigator.platform == "Win32") {
         window.print();

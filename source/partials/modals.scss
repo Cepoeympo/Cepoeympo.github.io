@@ -230,3 +230,9 @@ input[type=range]:focus::-ms-fill-lower {
   background: #1597EF;
   -webkit-appearance: none; outline: none;
 }
+
+@media (max-width: 768px) {
+  .modal-dialog {
+	margin: 20px auto 0;
+  }
+}
