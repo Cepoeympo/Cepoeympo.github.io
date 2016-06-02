@@ -244,4 +244,11 @@ input[type=range]:focus::-ms-fill-lower {
 	height: 100%;
 	margin: 160px auto 0;
   }
+  #game_box p {
+	margin: 0 0 35px;
+  }
+  #game_box button {
+	margin: 15px 10px;
+	width: 40%;
+  }
 }
