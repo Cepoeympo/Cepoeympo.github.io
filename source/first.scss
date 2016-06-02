@@ -257,13 +257,21 @@ a.disabled {
     min-width: 220px;
   }
   #footer {
-    height: 90px;
+    height: 130px;
+
+	.fa-gamepad {
+	  left: 45%;
+	  bottom: 12px;
+	}
   }
   #about_me, #certificates, #education, #experience, #skill, .border_border_bottom_padding {
     border-left: none;
     border-right: none;
   }
 }
+
+
+
 
 @media print {
 
@@ -316,4 +324,7 @@ a.disabled {
     display: inline;
   }
 }
+
+
+
 // The End

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var windowWidth = $(window).width();
 
-    if (windowWidth < 769) {
+    if (windowWidth < 750) {
         $('.certificate_link').addClass('disabled');
         $('.flex1').removeClass('flex-container');
         $('.flex2').removeClass('flex-container-two');
@@ -12,7 +12,7 @@ $(document).ready(function () {
 $(window).resize(function () {
     var windowWidth = $(window).width();
 
-    if (windowWidth < 769) {
+    if (windowWidth < 750) {
         $('.certificate_link').addClass('disabled');
         $('.flex1').removeClass('flex-container');
         $('.flex2').removeClass('flex-container-two');
