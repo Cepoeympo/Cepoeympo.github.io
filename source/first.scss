@@ -82,29 +82,9 @@ img {
     text-indent: 45px;
   }
 }
-
-/*
-.flex-container {
-  display: flex;
-  align-items: stretch;
-
-  flex-direction:row;
-  justify-content:center;
-}
-
-.flex1, .flex2 {
-  flex-flow: row nowrap;
-  align-content:stretch;
-}
-
-.flex2 {
-  border: 2px solid #000;
-  border-bottom: 0;
-}
-*/
 #skill {
   text-transform: uppercase;
-  height: 860px;
+//  height: 860px;
   @extend .border_border_bottom_padding;
   //    padding: $padding_all_box;
 
@@ -114,7 +94,7 @@ img {
 }
 
 #education {
-  height: 790px;
+//  height: 790px;
   @extend .border_border_bottom_padding;
   //  padding: $padding_all_box;
   border-top: 2px solid #000; // new
@@ -136,7 +116,7 @@ img {
 }
 
 #experience {
-  min-height: 1650px;
+//  min-height: 1650px;
   @extend .border_border_bottom_padding;
   border-left: 0 solid white;
 
@@ -148,9 +128,24 @@ img {
   }
 }
 
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  flex-direction:row;
+  justify-content:center;
+  flex-wrap: nowrap;
+}
+
+.flex-container-two {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  align-content:stretch;
+  justify-content:space-around;
+}
+
 #certificates {
   @extend .border_border_bottom_padding;
-  min-height: 75px;
 
   img {
     margin: 0 2% 20px;
@@ -220,12 +215,6 @@ a.disabled {
 }
 
 @media (max-width: 992px) {
-  #skill {
-    min-height: 950px;
-  }
-  #education {
-    min-height: 983px;
-  }
   #certificates {
     img {
       margin: 0 2% 20px;
@@ -296,13 +285,17 @@ a.disabled {
 
   .wide {
     margin-top:12px;
-    min-width: 550px;
+    width: 100%;
     border: none;
   }
 
   .skills_4_print {
     display: inline-block;
     width: 32%;
+  }
+
+  .flex-container, .flex-container-two {
+    display: block;
   }
 
   #certificates, #education, #about_me, #experience, #skill, .border_border_bottom_padding {
