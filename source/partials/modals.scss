@@ -34,6 +34,7 @@
   font-size: 30px;
   height: 40px;
   border: 2px solid #ababab;
+  border-radius: 4px;
 }
 
 #num2 {
@@ -254,7 +255,6 @@ input[type=range]:focus::-ms-fill-lower {
   #num1 {
 	  padding: 5px 10px 5px 0;
 	  font-size: 25px;
-	  border-radius: 4px;
   }
   #game_box p {
 	margin: 0 0 35px;
