@@ -12,6 +12,7 @@
   button {
 	margin: 10px;
 	width: 110px;
+	padding: 10px 15px 10px 10px;
   }
 
   button:focus {
@@ -22,6 +23,9 @@
 	outline: none;
   }
 
+  span {
+	margin:0 4px 0 -2px;
+  }
 }
 
 #num1 {
