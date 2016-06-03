@@ -227,52 +227,60 @@ a.disabled {
   }
 }
 
-@media (max-width: 768px) {
+@media handheld,  (max-width: 768px) {
+
   #wrapper {
     padding: 0;
   }
+
   #wrapper h1 {
     font-size: 33px;
   }
+
   #about_me, #experience, #skill, #education {
     padding: 0 20px 45px;
   }
+
   #experience {
     border-left: $border;
     min-height: 0;
   }
+
   #skill, #education {
     min-height: 0;
     height: auto;
   }
+
   #certificates img {
     margin: 0 0 20px;
     max-width: 100%;
     filter: grayscale(0%);
   }
+
   .hobby {
     width: 49%;
     display: inline-block;
   }
+
   .wide {
     min-width: 220px;
   }
+
   #footer {
     height: 130px;
 
 	.fa-gamepad {
 	  left: 45%;
 	  bottom: 12px;
+	  color: #ECEBE6;
 	}
   }
+
   #about_me, #certificates, #education, #experience, #skill, .border_border_bottom_padding {
     border-left: none;
     border-right: none;
   }
 }
-
-
-
 
 @media print {
 
@@ -325,7 +333,3 @@ a.disabled {
     display: inline;
   }
 }
-
-
-
-// The End
