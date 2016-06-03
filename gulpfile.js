@@ -63,22 +63,6 @@ gulp.task('uncss', function () {
         .pipe(connect.reload());
 });
 */
-/*
-// images
-gulp.task('images', function() {
-return gulp.src('source/*.jpg, source/*.png')
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('./images/'))
-});
-*/
-
-/*
-// notify
-gulp.task('notify', function () {
-    gulp.src("")
-    .pipe(notify({message: 'Gulp complete ^_^'}));
-});
-*/
 
 // watch
 gulp.task('watch', function () {

@@ -367,15 +367,13 @@
 								<h4 class="modal-title" id="myModalLabel">Guess</h4>
 							</div>
 							<div class="modal-body">
-
-
 								<div id="content">
 									<h3 id="UFO_title">НЛО прилетело и загадало число от 1 до 100. Возьмёшься
 										отгадать?</h3>
 									<p>После каждой попытки ты узнаешь, правильный ответ больше или меньше твоего.</p>
 									<p>Удачи, друг!</p>
 									<p><input type="button" class='btn btn-default' value="Поехали"
-									          onclick="$('#content').css('display','none'); $('#game_box').css('display','block')"/>
+									          id="gameStart"/>
 									</p>
 								</div>
 
@@ -391,12 +389,11 @@
 									<button type="button" class="btn btn-danger" id="lose"><span class="glyphicon glyphicon-flag  fa-inverse" aria-hidden="true"></span>Сдаться</button>
 									<button type="button" class="btn btn-info" id="refresh"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Обновить</button>
 									<button type="button" class="btn btn-warning" data-dismiss="modal"
-									        onclick="$('#content').css('display','block'); $('#game_box').css('display','none');"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									        id="gameStop"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 										Закрыть
 									</button>
 								</div>
 								<div class="modal-footer">
-
 								</div>
 							</div>
 						</div>
@@ -408,17 +405,8 @@
 	</div>
 	<div class="row hidden-xs pix50"></div>
 </div>
-<!-- Скрипты -->
-<!--[if lt IE 9]>
-<script src="js/html5shiv.min.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif] -->
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.min.js"></script>
-<script src="js/77601d11.js"></script>
+
 <!-- Easter Egg -->
-<script src="source/easterEgg.js"></script>
 <audio id="firstEasterEgg">
 	<source src="sounds/nbz.mp3" type="audio/mpeg">
 </audio>
@@ -428,8 +416,16 @@
 <audio id="thirdEasterEgg">
 	<source src="sounds/nikto.mp3" type="audio/mpeg">
 </audio>
-<script src="source/easterEgg.js"></script>
 <!-- Egg End -->
+
+<!-- Скрипты -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif] -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.min.js"></script>
+<script src="js/77601d11.js"></script>
 </body>
 </html>
-<!-- The End -->

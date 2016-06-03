@@ -2,11 +2,10 @@ document.getElementById("firstEasterEgg").volume = 0.4;
 document.getElementById("secondEasterEgg").volume = 0.4;
 document.getElementById("thirdEasterEgg").volume = 0.4;
 
-$('#name')
-	.data('counter', 0)                            // Обнуляем счетчик
+$('#name').data('counter', 0)
 
 	.click(function () {
-		var counter = $(this).data('counter');     // Получаем значение
+		var counter = $(this).data('counter');
 
 		if (counter == 4) {
 			firstEasterEgg.play();
