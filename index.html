@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Андрей Цветков | Резюме</title>
 	<meta name="author" content="Cepoeympo">
-	<link rel="stylesheet" href="bootstrap/css/min/bootstrap.min.css">
-	<link rel="stylesheet" href='bootstrap/css/min/bootstrap.flatly.min.css'>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href='css/first.min.css'>
 	<link rel="stylesheet" href="css/lightbox.css">
 </head>
@@ -364,9 +364,7 @@
 										aria-hidden="true">&times;</span></button>
 								<h4 class="modal-title" id="myModalLabel">Guess</h4>
 							</div>
-							<div class="modal-body">
-
-
+							<div class="modal-body"><!-- Модальное окно -->
 								<div id="content">
 									<h3 id="UFO_title">НЛО прилетело и загадало число от 1 до 100. Возьмёшься
 										отгадать?</h3>
@@ -385,7 +383,8 @@
 									          value="50"></p>
 									<p><input title="Your number" type="range" id="num2" min="1" max="100" step="1"
 									          value="50"></p>
-									<button type="button" class="btn btn-success" id="seven21">Ответить</button>
+									<button type="button" class="btn btn-success" id="seven21"aria-label="Left Align">
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Ответить</button>
 									<button type="button" class="btn btn-danger" id="lose">Сдаться</button>
 									<button type="button" class="btn btn-info" id="refresh">Обновить</button>
 									<button type="button" class="btn btn-warning" data-dismiss="modal"
@@ -415,6 +414,8 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/main.min.js"></script>
 <script src="js/77601d11.js"></script>
+
+
 </body>
 </html>
 <!-- The End -->

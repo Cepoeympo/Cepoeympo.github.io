@@ -1,6 +1,5 @@
 .modal-dialog {
   margin: 250px auto 0;
-
 }
 
 #game_box {
@@ -240,14 +239,18 @@ input[type=range]:focus::-ms-fill-lower {
 
 @media handheld {
   .modal-dialog {
-	width: 100%;
+	margin: 0 auto;
 	position: fixed;
-	bottom: -90px;
-	margin-top: 0;
   }
+/*
+  .modal-content {
+	position: fixed;
+  }
+*/
   #game_box p {
 	margin: 0 0 35px;
   }
+
   #game_box button {
 	margin: 15px 10px;
 	width: 40%;
