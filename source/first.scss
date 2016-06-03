@@ -218,6 +218,12 @@ a.disabled {
   }
 }
 
+::selection {
+  background: rgb(73, 73, 73);
+  color: #FFE800;
+  text-shadow: 0 0 4px #FF0000;
+}
+
 @media (max-width: 992px) {
   #certificates {
     img {
