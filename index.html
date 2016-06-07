@@ -68,7 +68,8 @@
 						<p class='education_header text-center'>Агент по недвижимости</p>
 						<p class='education_place text-center'>Агенство недвижимости (г.Паттайя)</p>
 						<p class='education_year text-center'>ноябрь 2012 — февраль 2013</p>
-						<p class="experience_description">В зимний сезон, занимался консультацией клиентов, по рынку недвижимости в
+						<p class="experience_description">В зимний сезон, занимался консультацией клиентов, по рынку
+							недвижимости в
 							г.Паттайя. Устраивал презентации объектов продажи и занимался заключением всех
 							сопроводительных документов.</p>
 						<p>Ну и фотографировал немножко =)</p>
@@ -354,17 +355,108 @@
 		<div class="row">
 			<div id='footer' class="col-sm-12 text-center">
 				<div class="header_square wide">
-					<h4 class='header'>+7(926)990-22-26<span class="hidden-print"> / <a href="mailto:79269902226@ya.ru">79269902226@ya.ru</a> / </span><span class="visible-print"> 79269902226@ya.ru</span> @Cepoeympo </h4>
+					<h4 class='header'>+7(926)990-22-26<span class="hidden-print"> / <a data-toggle="modal"
+					                                                                    data-target="#message_modal"
+					                                                                    href="#">79269902226@ya.ru</a> / </span><span
+							class="visible-print"> 79269902226@ya.ru</span> @Cepoeympo </h4>
 				</div>
-				<i class="fa fa-gamepad fa-inverse fa-3x" data-toggle="modal" data-target="#myModal"></i>
-				<!-- Modal -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<!-- ////////////////////
+				Start Modal Message
+				/////////////////////-->
+				<div class="modal fade" id="message_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+				     aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
 										aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Guess</h4>
+								<h4 class="modal-title">Очень важное письмо</h4>
+							</div>
+							<div class="modal-body">
+								<form action="send.php" method="post" id="message_form">
+
+									<!-- Name input -->
+									<div class="form-group has-feedback">
+										<label for="inputName" class="control-label">Имя:</label>
+										<div class="input-group">
+<span class="input-group-addon">
+<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+</span>
+											<input type="text" class="form-control" id="inputName" name="inputName"
+											       placeholder="Ваше Имя" pattern="^[А-Яа-яЁё\s]+$" tabindex="1"
+											       required>
+										</div>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+										<div class="help-block with-errors"></div>
+									</div>
+
+									<!-- Phone number input -->
+									<div class="form-group has-feedback">
+										<label for="phoneModal" class="control-label">Телефон:</label>
+										<div class="input-group">
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+
+							</span>
+											<input type="tel" class="form-control" name="phoneModal" id="phoneModal" placeholder="+7 (900) 900-90-90" tabindex="2">
+										</div>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+										<div class="help-block with-errors"></div>
+									</div>
+
+									<!-- Message input -->
+									<div class="form-group has-feedback" id='validTextArea'>
+										<label class="control-label" for="messageBody">Сообщение:</label>
+										<div class="input-group">
+<span class="input-group-addon">
+<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+</span>
+<textarea name="messageBody" class="form-control write" cols="40"
+          id="messageBody" rows="10" title="Message body"
+          tabindex="3"></textarea>
+										</div>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+									</div>
+
+									<!-- Captcha input
+										<div class="form-group captchaMessageGroup">
+											<div class="g-recaptcha" data-callback='captchaIsRight'
+												 data-sitekey="6LeUsSETAAAAANxA_1DU2O_71CnBpYLdEkRpJ_a1">
+											</div>
+										</div>-->
+
+									<!-- Buttons -->
+									<div class="form-group buttonsMessageGroup text-right">
+										<button type="button" class="btn btn-default" data-dismiss="modal"><span
+												class="glyphicon glyphicon-trash" aria-hidden="true"></span>Передумать
+										</button>
+										<button type="submit" id='sendLetter' class="btn btn-info"
+										        aria-label="Left Align" tabindex="4"><span
+												class="glyphicon glyphicon-send"
+												aria-hidden="true"></span>Отправить
+										</button>
+									</div>
+
+								</form>
+							</div>
+							<!-- Footer + send input -->
+							<div class="modal-footer">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ////////////////////
+				End Modal Message
+				/////////////////////-->
+				<i class="fa fa-gamepad fa-inverse fa-3x" data-toggle="modal" data-target="#game_modal"></i>
+				<!-- Start Modal Game -->
+				<div class="modal fade" id="game_modal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+										aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="gameModalLabel">Guess</h4>
 							</div>
 							<div class="modal-body">
 								<div id="content">
@@ -372,8 +464,8 @@
 										отгадать?</h3>
 									<p>После каждой попытки ты узнаешь, правильный ответ больше или меньше твоего.</p>
 									<p>Удачи, друг!</p>
-									<p><input type="button" class='btn btn-default' value="Поехали"
-									          id="gameStart"/>
+									<p>
+										<button type="button" class='btn btn-default' id="gameStart">Поехали</button>
 									</p>
 								</div>
 
@@ -385,27 +477,35 @@
 									          value="50"></p>
 									<p><input title="Your number" type="range" id="num2" min="1" max="100" step="1"
 									          value="50"></p>
-									<button type="button" class="btn btn-success" id="seven21" aria-label="Left Align"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Ответить</button>
-									<button type="button" class="btn btn-danger" id="lose"><span class="glyphicon glyphicon-flag  fa-inverse" aria-hidden="true"></span>Сдаться</button>
-									<button type="button" class="btn btn-info" id="refresh"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Обновить</button>
+									<button type="button" class="btn btn-success" id="seven21" aria-label="Left Align">
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Ответить
+									</button>
+									<button type="button" class="btn btn-danger" id="lose"><span
+											class="glyphicon glyphicon-flag  fa-inverse" aria-hidden="true"></span>Сдаться
+									</button>
+									<button type="button" class="btn btn-info" id="refresh"><span
+											class="glyphicon glyphicon-refresh spin1" aria-hidden="true"></span>Обновить
+									</button>
 									<button type="button" class="btn btn-warning" data-dismiss="modal"
-									        id="gameStop"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									        id="gameStop"><span class="glyphicon glyphicon-remove spin2"
+									                            aria-hidden="true"></span>
 										Закрыть
 									</button>
 								</div>
-								<div class="modal-footer">
-								</div>
+							</div>
+							<div class="modal-footer">
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- End Modal Game -->
 				<i class="fa fa-print fa-inverse fa-3x print hidden-xs" onclick="printsite();"></i>
 			</div>
 		</div>
 	</div>
+
 	<div class="row hidden-xs pix50"></div>
 </div>
-
 <!-- Easter Egg -->
 <audio id="firstEasterEgg">
 	<source src="sounds/nbz.mp3" type="audio/mpeg">
@@ -417,7 +517,6 @@
 	<source src="sounds/nikto.mp3" type="audio/mpeg">
 </audio>
 <!-- Egg End -->
-
 <!-- Скрипты -->
 <!--[if lt IE 9]>
 <script src="js/html5shiv.min.js"></script>
@@ -426,6 +525,8 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.min.js"></script>
-<script src="js/77601d11.js"></script>
+<script src="js/fortawesome.js"></script>
+<script src="js/maskedinput.js"></script>
+<script src="js/bootstrapValidator.min.js"></script>
 </body>
 </html>

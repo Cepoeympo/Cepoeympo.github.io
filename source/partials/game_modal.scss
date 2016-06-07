@@ -2,10 +2,29 @@
   margin: 250px auto 0;
 }
 
+#game_modal {
+
+  .modal-body{
+	height: 300px;
+  }
+
+  .modal-footer {
+	margin-top: 10px;
+	height: 68px;
+  }
+}
+
+
 #content {
 
   p {
 	margin: 0 0 18px;
+  }
+  button {
+	margin: 10px;
+	width: 42%;
+	min-width: 100px;
+	padding: 10px 15px 10px 10px;
   }
 }
 
@@ -18,7 +37,8 @@
 
   button {
 	margin: 10px;
-	width: 110px;
+	width: 42%;
+	min-width: 100px;
 	padding: 10px 15px 10px 10px;
   }
 
@@ -31,7 +51,7 @@
   }
 
   span {
-	margin:0 4px 0 -2px;
+	margin: 0 4px 0 -2px;
   }
 }
 
@@ -46,10 +66,6 @@
 
 #num2 {
   margin: 0 auto;
-}
-
-.modal-footer {
-  margin-top: 30px;
 }
 
 #result {
@@ -249,16 +265,12 @@ input[type=range]:focus::-ms-fill-lower {
   outline: none;
 }
 
-
-
-
-@media handheld,  (max-width: 768px) {
+@media handheld, (max-width: 768px) {
   .modal-dialog {
 	margin: 150px auto;
   }
 
   #num1 {
-	text-align: center;
 	padding: 3px 5px;
 	font-size: 25px;
   }

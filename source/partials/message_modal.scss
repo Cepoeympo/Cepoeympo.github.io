@@ -1,0 +1,36 @@
+#message_modal {
+  text-align: left;
+
+  .input-group {
+	margin-bottom: 13px;
+  }
+
+  .g-recaptcha {
+	// display: none;
+	// почитать скпины про хайд-блок
+	margin-top: 22px;
+  }
+
+  .btn {
+	width: 140px;
+	padding: 10px 5px 10px;
+	margin-left: 15px;
+	margin-top: 6px;
+  }
+
+  .buttonsMessageGroup {
+	margin-bottom: 0;
+
+	.glyphicon {
+	  float: right;
+	  margin: 3px 7px 0 0;
+	}
+  }
+
+  // Valid
+  #success_message{ display: none;}
+  // моё
+  .form-control-feedback {
+	top: 0;
+  }
+}
