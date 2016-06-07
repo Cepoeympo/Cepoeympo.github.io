@@ -1,5 +1,6 @@
 // Partials
-@import "partials/modals";
+@import "partials/game_modal";
+@import "partials/message_modal";
 
 $border: 2px solid #000;
 $padding_all_box: 0 45px 45px;
@@ -40,7 +41,7 @@ img {
   max-width: 970px;
   padding-left: 0;
   padding-right: 0;
-//  font-size: 15px; // для нового Bootstrap
+  //  font-size: 15px; // для нового Bootstrap
 }
 
 .pix50 {
@@ -55,16 +56,16 @@ img {
   box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 
   h1 {
-    margin-top: 46px;
-    line-height: 50px;
-    letter-spacing: 17px;
-    text-transform: uppercase;
+	margin-top: 46px;
+	line-height: 50px;
+	letter-spacing: 17px;
+	text-transform: uppercase;
   }
 
   h4 {
-    margin-top: 10px;
-    text-transform: uppercase;
-    font-size: 19px;
+	margin-top: 10px;
+	text-transform: uppercase;
+	font-size: 19px;
   }
 }
 
@@ -82,23 +83,24 @@ img {
   padding: 0 40px 45px;
 
   p {
-    text-align: justify;
-    text-indent: 45px;
+	text-align: justify;
+	text-indent: 45px;
   }
 }
+
 #skill {
   text-transform: uppercase;
-//  height: 860px;
+  //  height: 860px;
   @extend .border_border_bottom_padding;
   //    padding: $padding_all_box;
 
   h5 {
-    margin-top: 15px;
+	margin-top: 15px;
   }
 }
 
 #education {
-//  height: 790px;
+  //  height: 790px;
   @extend .border_border_bottom_padding;
   //  padding: $padding_all_box;
   border-top: 2px solid #000; // new
@@ -120,23 +122,23 @@ img {
 }
 
 #experience {
-//  min-height: 1650px;
+  //  min-height: 1650px;
   @extend .border_border_bottom_padding;
   border-left: 0 solid white;
 
   .experience_description {
-    text-indent: 45px;
+	text-indent: 45px;
   }
   .experience_description {
-    text-align: justify;
+	text-align: justify;
   }
 }
 
 .flex-container {
   display: flex;
   align-items: stretch;
-  flex-direction:row;
-  justify-content:center;
+  flex-direction: row;
+  justify-content: center;
   flex-wrap: nowrap;
 }
 
@@ -144,27 +146,27 @@ img {
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  align-content:stretch;
-  justify-content:space-around;
+  align-content: stretch;
+  justify-content: space-around;
 }
 
 #certificates {
   @extend .border_border_bottom_padding;
 
   img {
-    margin: 0 2% 20px;
-    max-width: 28%;
-    display: inline-block; ////////////// comment for AnimateCss
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    filter: grayscale(100%);
+	margin: 0 2% 20px;
+	max-width: 28%;
+	display: inline-block; ////////////// comment for AnimateCss
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	filter: grayscale(100%);
   }
   img:hover {
-    -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
-    filter: grayscale(0%);
+	-webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+	filter: grayscale(0%);
   }
 }
 
@@ -197,24 +199,24 @@ a.disabled {
 #footer {
 
   .fa-gamepad, .fa-print {
-    position: absolute;
-    color: #c2c2c2;// #ECEBE6;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+	position: absolute;
+	color: #c2c2c2; // #ECEBE6;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
   }
 
   .fa-gamepad {
-    left: 13px;
-    bottom: 7px;
+	left: 13px;
+	bottom: 13px;
   }
 
   .fa-print {
-    right: 13px;
-    bottom: 10px;
+	right: 13px;
+	bottom: 10px;
   }
 
   .fa-gamepad:hover, .fa-print:hover {
-    color:#ECEBE6;
+	color: #ECEBE6;
   }
 }
 
@@ -224,56 +226,81 @@ a.disabled {
   text-shadow: 0 0 4px #FF0000;
 }
 
+// Validation
+.bv-form .help-block {
+  margin-bottom: 0;
+}
+.bv-form .tooltip-inner {
+  text-align: left;
+}
+.nav-tabs li.bv-tab-success > a {
+  color: #3c763d;
+}
+.nav-tabs li.bv-tab-error > a {
+  color: #a94442;
+}
+
+.bv-form .bv-icon-no-label {
+  top: 0;
+}
+
+.bv-form .bv-icon-input-group {
+  top: 0;
+  z-index: 100;
+}
+// Validation End
+
+
 @media (max-width: 992px) {
   #certificates {
-    img {
-      margin: 0 2% 20px;
-      max-width: 45%;
-    }
+	img {
+	  margin: 0 2% 20px;
+	  max-width: 45%;
+	}
   }
 }
 
-@media handheld,  (max-width: 768px) {
+@media handheld, (max-width: 768px) {
 
   #wrapper {
-    padding: 0;
+	padding: 0;
   }
 
   #wrapper h1 {
-    font-size: 33px;
+	font-size: 33px;
   }
 
   #about_me, #experience, #skill, #education {
-    padding: 0 20px 45px;
+	padding: 0 20px 45px;
   }
 
   #experience {
-    border-left: $border;
-    min-height: 0;
+	border-left: $border;
+	min-height: 0;
   }
 
   #skill, #education {
-    min-height: 0;
-    height: auto;
+	min-height: 0;
+	height: auto;
   }
 
   #certificates img {
-    margin: 0 0 20px;
-    max-width: 100%;
-    filter: grayscale(0%);
+	margin: 0 0 20px;
+	max-width: 100%;
+	filter: grayscale(0%);
   }
 
   .hobby {
-    width: 49%;
-    display: inline-block;
+	width: 49%;
+	display: inline-block;
   }
 
   .wide {
-    min-width: 220px;
+	min-width: 220px;
   }
 
   #footer {
-    height: 130px;
+	height: 130px;
 
 	.fa-gamepad {
 	  left: 45%;
@@ -282,60 +309,73 @@ a.disabled {
 	}
   }
 
+  #game_box {
+
+	#resilt {
+	  height: 60px;
+	}
+  }
+  #game_modal {
+
+	.modal-body {
+	  height: 370px;
+	}
+  }
+
   #about_me, #certificates, #education, #experience, #skill, .border_border_bottom_padding {
-    border-left: none;
-    border-right: none;
+	border-left: none;
+	border-right: none;
   }
 }
 
 @media print {
 
   #name {
-    border-bottom: 2px solid black;
+	border-bottom: 2px solid black;
   }
   #about_me {
-    margin-top: 60px;
+	margin-top: 60px;
   }
-#education {
+  #education {
 
-  .education_year, .education_place {
-    display: inline;
+	.education_year, .education_place {
+	  display: inline;
+	}
+
   }
-
-}
 
   .header_square {
-    margin: -1px auto 30px;
-    border: 1px solid black;
+	margin: -1px auto 30px;
+	border: 1px solid black;
   }
 
   .wide {
-    margin-top:12px;
-    width: 100%;
-    border: none;
+	margin-top: 12px;
+	width: 100%;
+	border: none;
   }
 
   .skills_4_print {
-    display: inline-block;
-    width: 32%;
+	display: inline-block;
+	width: 32%;
   }
 
   .flex-container, .flex-container-two {
-    display: block;
+	display: block;
   }
 
   #certificates, #education, #about_me, #experience, #skill, .border_border_bottom_padding {
-    border-top: 1px solid black;
+	border-top: 1px solid black;
   }
 
   #footer {
 
-    i {
-      display: none;
-    }
+	i {
+	  display: none;
+	}
   }
 
   .visible-print {
-    display: inline;
+	display: inline;
   }
 }
