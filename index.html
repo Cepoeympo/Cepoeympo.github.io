@@ -357,12 +357,14 @@
 				<div class="header_square wide">
 					<h4 class='header'>+7(926)990-22-26<span class="hidden-print"> / <a data-toggle="modal"
 					                                                                    data-target="#message_modal"
-					                                                                    href="#">79269902226@ya.ru</a> / </span><span
+					                                                                    href="mailto:79269902226@ya.ru?subject=Очень важное письмо">79269902226@ya.ru</a> / </span><span
 							class="visible-print"> 79269902226@ya.ru</span> @Cepoeympo </h4>
 				</div>
+
 				<!-- ////////////////////
 				Start Modal Message
 				/////////////////////-->
+				<!--
 				<div class="modal fade" id="message_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
 				     aria-hidden="true">
 					<div class="modal-dialog" role="document">
@@ -376,78 +378,78 @@
 								<form action="send.php" method="post" id="message_form">
 
 									<!-- Name input -->
-									<div class="form-group has-feedback">
-										<label for="inputName" class="control-label">Имя:</label>
-										<div class="input-group">
+				<!--<div class="form-group has-feedback">
+					<label for="inputName" class="control-label">Имя:</label>
+					<div class="input-group">
 <span class="input-group-addon">
 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 </span>
-											<input type="text" class="form-control" id="inputName" name="inputName"
-											       placeholder="Ваше Имя" pattern="^[А-Яа-яЁё\s]+$" tabindex="1"
-											       required>
-										</div>
-										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-										<div class="help-block with-errors"></div>
-									</div>
+						<input type="text" class="form-control" id="inputName" name="inputName"
+							   placeholder="Ваше Имя" pattern="^[А-Яа-яЁё\s]+$" tabindex="1"
+							   required>
+					</div>
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					<div class="help-block with-errors"></div>
+				</div>
 
-									<!-- Phone number input -->
-									<div class="form-group has-feedback">
-										<label for="phoneModal" class="control-label">Телефон:</label>
-										<div class="input-group">
-							<span class="input-group-addon">
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+				<!-- Phone number input -->
+				<!--<div class="form-group has-feedback">
+					<label for="phoneModal" class="control-label">Телефон:</label>
+					<div class="input-group">
+		<span class="input-group-addon">
+		<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
 
-							</span>
-											<input type="tel" class="form-control" name="phoneModal" id="phoneModal" placeholder="+7 (900) 900-90-90" tabindex="2">
-										</div>
-										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-										<div class="help-block with-errors"></div>
-									</div>
+		</span>
+						<input type="tel" class="form-control" name="phoneModal" id="phoneModal" placeholder="+7 (900) 900-90-90" tabindex="2">
+					</div>
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+					<div class="help-block with-errors"></div>
+				</div>
 
-									<!-- Message input -->
-									<div class="form-group has-feedback" id='validTextArea'>
-										<label class="control-label" for="messageBody">Сообщение:</label>
-										<div class="input-group">
+				<!-- Message input -->
+				<!--<div class="form-group has-feedback" id='validTextArea'>
+					<label class="control-label" for="messageBody">Сообщение:</label>
+					<div class="input-group">
 <span class="input-group-addon">
 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 </span>
 <textarea name="messageBody" class="form-control write" cols="40"
-          id="messageBody" rows="10" title="Message body"
-          tabindex="3"></textarea>
-										</div>
-										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-									</div>
+id="messageBody" rows="10" title="Message body"
+tabindex="3"></textarea>
+					</div>
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				</div>
 
-									<!-- Captcha input
-										<div class="form-group captchaMessageGroup">
-											<div class="g-recaptcha" data-callback='captchaIsRight'
-												 data-sitekey="6LeUsSETAAAAANxA_1DU2O_71CnBpYLdEkRpJ_a1">
-											</div>
-										</div>-->
+				<!-- Captcha input
+					<div class="form-group captchaMessageGroup">
+						<div class="g-recaptcha" data-callback='captchaIsRight'
+							 data-sitekey="6LeUsSETAAAAANxA_1DU2O_71CnBpYLdEkRpJ_a1">
+						</div>
+					</div>-->
 
 									<!-- Buttons -->
-									<div class="form-group buttonsMessageGroup text-right">
-										<button type="button" class="btn btn-default" data-dismiss="modal"><span
-												class="glyphicon glyphicon-trash" aria-hidden="true"></span>Передумать
-										</button>
-										<button type="submit" id='sendLetter' class="btn btn-info"
-										        aria-label="Left Align" tabindex="4"><span
-												class="glyphicon glyphicon-send"
-												aria-hidden="true"></span>Отправить
-										</button>
-									</div>
-
-								</form>
-							</div>
-							<!-- Footer + send input -->
-							<div class="modal-footer">
-							</div>
-						</div>
-					</div>
+				<!--<div class="form-group buttonsMessageGroup text-right">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><span
+							class="glyphicon glyphicon-trash" aria-hidden="true"></span>Передумать
+					</button>
+					<button type="submit" id='sendLetter' class="btn btn-info"
+							aria-label="Left Align" tabindex="4"><span
+							class="glyphicon glyphicon-send"
+							aria-hidden="true"></span>Отправить
+					</button>
 				</div>
-				<!-- ////////////////////
-				End Modal Message
-				/////////////////////-->
+
+			</form>
+		</div>
+		<!-- Footer + send input -->
+				<!--<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ////////////////////
+	End Modal Message
+	/////////////////////-->
 				<i class="fa fa-gamepad fa-inverse fa-3x" data-toggle="modal" data-target="#game_modal"></i>
 				<!-- Start Modal Game -->
 				<div class="modal fade" id="game_modal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel">
