@@ -218,6 +218,10 @@ a.disabled {
   .fa-gamepad:hover, .fa-print:hover {
 	color: #ECEBE6;
   }
+
+  a {
+	cursor: pointer;
+  }
 }
 
 ::selection {
