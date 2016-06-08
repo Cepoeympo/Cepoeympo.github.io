@@ -1,39 +1,4 @@
 <?php
-/*
-if (isset($_POST['inputName'])) {
-	$inputName = $_POST['inputName'];
-}
-if (isset($_POST['$phoneModal'])) {
-	$phoneModal = $_POST['$phoneModal'];
-}
-if (isset($_POST['$messageBody'])) {
-	$messageBody = $_POST['$messageBody'];
-}
-
-$inputName = stripslashes($inputName);
-$inputName = htmlspecialchars($inputName);
-
-$phoneModal = stripslashes($phoneModal);
-$phoneModal = htmlspecialchars($phoneModal);
-
-$messageBody = stripslashes($messageBody);
-$messageBody = htmlspecialchars($messageBody);
-
-$address = "79269902226@ya.ru";
-
-$message = "" . $messageBody . "\nС уважением, " . $inputName . "\nМой контактный телефон: " . $phoneModal . "";
-
-$verify = mail($address, $message, "Content-type:text/plain; Charset=UTF-8");
-
-
-if ($verify == 'true') {
-	header("refresh:3;url=http://cepoeympo.github.io/");
-	echo "<p>Сообщение отправлено!</p><p>Через 3 секунд Вы вернётесь назад</p><p> или нажмите на <a href='http://cepoeympo.github.io/'> эту ссылку</a></p><p>С уважением,</p><p>Андрей Максимович</p>";
-}
-*/
-///////////////
-
-
 $phoneModal = $_POST['phoneModal'];
 $inputName = $_POST['inputName'];
 $messageBody = $_POST['messageBody'];

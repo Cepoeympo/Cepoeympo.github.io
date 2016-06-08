@@ -27,8 +27,14 @@
 	}
   }
 
+  .modal-footer {
+	padding: 29px;
+  }
+
   // Valid
-  #success_message{ display: none;}
+  #success_message{
+	display: none;
+  }
   // моё
   .form-control-feedback {
 	top: 0;
