@@ -58,12 +58,11 @@ gulp.task('uncss', function () {
             html: ['*.html', 'games/*.html']
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('bootstrap/css/min/'))
+        .pipe(gulp.dest('./css/min/'))
         //.pipe(notify({message: 'Gulp complete ^_^'}))
         .pipe(connect.reload());
 });
 */
-
 // watch
 gulp.task('watch', function () {
     gulp.watch('source/**/*.scss', ['css'/*, 'uncss'*/]);
