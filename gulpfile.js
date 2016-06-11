@@ -4,15 +4,16 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var livereload = require('livereload');
 var sass = require('gulp-sass');
-var uncss = require('gulp-uncss');
 var autoprefixer = require('gulp-autoprefixer');
-var notify = require('gulp-notify');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
-//var concatCss    = require('gulp-concat-css');
+
+//var uncss = require('gulp-uncss');
+//var notify = require('gulp-notify');
+//var concatCss = require('gulp-concat-css');
 
 // connect
 gulp.task('connect', function () {
@@ -51,6 +52,23 @@ gulp.task('css', function () {
         .pipe(connect.reload());
 });
 /*
+// all js min experiment !!
+gulp.task('jsmin', function() {
+	return gulp.src('js/.js')
+		.pipe(concat('all.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('js/min'))
+		.pipe(connect.reload());
+});
+
+// all css min experiment !!
+gulp.task('cssmin', function () {
+	return gulp.src('css/*.css')
+		.pipe(concatCss("all.min.css"))
+		.pipe(cleanCSS({compatibility: 'ie8'}))
+		.pipe(gulp.dest('css/min'));
+});
+
 // uncss
 gulp.task('uncss', function () {
     gulp.src('source/*.css')

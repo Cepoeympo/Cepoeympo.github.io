@@ -1,0 +1,57 @@
+.total_clear_margin_padding {
+  margin: 0;
+  padding: 0;
+}
+
+#mail_wrapper {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  font-family: 'Century Gothic', Arial, sans-serif;
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+}
+#mail_header {
+  background: #000;
+  text-transform: uppercase;
+  color: #fff;
+  min-height: 150px;
+  padding-bottom: 40px;
+
+  h1 {
+	margin: 0 auto;
+	line-height: 50px;
+	letter-spacing: 17px;
+  }
+}
+#mail_somebody {
+  display: inline-block;
+
+  img{
+	//width: 31%;
+  }
+}
+#mail_space {
+  width: 31%;
+  display: inline-block;
+}
+#mail_name_and_phone {
+  width: 31%;
+  display: inline-block;
+
+  #mail_name {
+
+  }
+  #mail_phone {
+
+  }
+}
+#mail_important_letter {
+
+}
+#mail_message_body {
+
+}
+#mail_end {
+
+}
