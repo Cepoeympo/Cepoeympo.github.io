@@ -70,6 +70,9 @@ $('#gameStop').click(function () {
 onmouseenter="$('.spin1').addClass('fa-spin')"
 onmouseleave="$('.spin1').removeClass('fa-spin')"
 */
+/**
+ * Created by Duke on 12.06.2016.
+ */
 window.onload = function () {
     document.getElementById("num1").oninput = function () {
         document.getElementById("num2").value = document.getElementById("num1").value;
@@ -143,7 +146,70 @@ window.onload = function () {
         num1.style.background = "#fff";
         num1.style.color = "#000";
     };
+
+////////////////////////////////////
+////////////////////////////////////
+/*
+	var minCounter;
+	var maxCounter;
+	var averageCounter;
+	var totalGames; // = 0;
+	var totalSum; // ??
+	var lastAttempt;
+
+
+	function saveLoadCounter() {
+		totalGames++;
+
+		if (minCounter > lastAttempt){
+			localStorage.setItem('hide', idVhod.style.display); // Edit !
+		}
+		 if (maxCounter < lastAttempt){
+            localStorage.setItem('hide', idVhod.style.display); // Edit !
+		 }
+
+		averageCounter = totalSum / totalGames; // Проверить !
+
+		localStorage.setItem('averageCounter', idVhod.style.display); // Edit !
+		localStorage.setItem('totalGames', idVhod.style.display); // Edit !
+		localStorage.setItem('totalSum', idVhod.style.display); // Edit !
+	}
+
+//	function checkLocalStorage() {
+//		try {
+//			return 'localStorage' in window && window.localStorage !== null;
+//		} catch (e) {
+//			return false;
+//		}
+//	}
+
+	if (checkLocalStorage() === true) {
+		//if (num1.value == rndm) {
+		var minCounter;
+		var maxCounter;
+		var averageCounter;
+
+
+		localStorage.setItem('minCounter', idVhod.style.display);
+		//localStorage.setItem('maxCounter', idVhod.style.display);
+		//localStorage.setItem('averagecounter', idVhod.style.display);
+
+
+		if(localStorage.getItem('minCounter') === true) {
+			document.getElementById('idVhod').style.display = 'inline';
+		} else {
+			idVhod.style.display = (idVhod.style.display == 'inline') ? '' : 'inline';
+			localStorage.setItem('hide', idVhod.style.display);
+			}
+		}
+*/
+////////////////////////////////////
+////////////////////////////////////
+
 };
+
+
+
 /*!
  * Lightbox v2.8.2
  * by Lokesh Dhakar
