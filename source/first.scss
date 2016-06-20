@@ -1,7 +1,8 @@
 // Partials
-@import "partials/game_modal";
-@import "partials/message_modal";
-@import "partials/html_mail_modal";
+@import "partials/_game_modal";
+@import "partials/_message_modal";
+@import "partials/_html_mail_modal";
+@import "partials/media";
 
 $border: 2px solid #000;
 $padding_all_box: 0 45px 45px;
@@ -338,15 +339,22 @@ a.disabled {
   #name {
 	border-bottom: 2px solid black;
   }
+
   #about_me {
-	margin-top: 60px;
+	margin-top: 0;
+	border-top: 0;
   }
+
   #education {
 
 	.education_year, .education_place {
 	  display: inline;
 	}
 
+  }
+
+  #skill {
+	margin-top:70px;
   }
 
   .header_square {
@@ -377,6 +385,9 @@ a.disabled {
 
 	i {
 	  display: none;
+	}
+	h4 {
+	  line-height: 1.8;
 	}
   }
 

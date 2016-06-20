@@ -70,9 +70,6 @@ $('#gameStop').click(function () {
 onmouseenter="$('.spin1').addClass('fa-spin')"
 onmouseleave="$('.spin1').removeClass('fa-spin')"
 */
-/**
- * Created by Duke on 12.06.2016.
- */
 window.onload = function () {
     document.getElementById("num1").oninput = function () {
         document.getElementById("num2").value = document.getElementById("num1").value;
