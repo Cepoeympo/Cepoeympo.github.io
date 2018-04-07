@@ -2,9 +2,9 @@ firstEasterEgg=document.getElementById("firstEasterEgg");
 secondEasterEgg=document.getElementById("secondEasterEgg");
 thirdEasterEgg=document.getElementById("thirdEasterEgg");
 
-firstEasterEgg.volume=0.1;
+firstEasterEgg.volume=1;
 secondEasterEgg.volume=0.1;
-thirdEasterEgg.volume=0.1;
+thirdEasterEgg.volume=0.5;
 
 $('#name').data('counter', 0)
 
