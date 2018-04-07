@@ -1,6 +1,6 @@
-document.getElementById("firstEasterEgg").volume = 0.25;
-document.getElementById("secondEasterEgg").volume = 0.25;
-document.getElementById("thirdEasterEgg").volume = 0.25;
+document.getElementById("firstEasterEgg").volume = 0.15;
+document.getElementById("secondEasterEgg").volume = 0.15;
+document.getElementById("thirdEasterEgg").volume = 0.15;
 
 $('#name').data('counter', 0)
 
