@@ -13,5 +13,5 @@ $verify = mail($to, $subject, $text, $headers);
 
 if ($verify == 'true') {
 	header("refresh:0;url=http://cepoeympo.github.io/");
-	/*echo "<p>The message is sent!</p><p>In 3 seconds, You'll be back</p><p> or click on <a href='http://cepoeympo.github.io/'> this link</a></p><p>Best regards,</p><p>Andrey Maksimovich</p>";*/
+	/*echo "<p>The message is sent!</p><p>In 3 seconds, You'll be back</p><p> or click on <a href='http://cepoeympo.github.io/'> this link</a></p><p>Best regards,</p><p>Andrey Tsvetkov</p>";*/
 }
