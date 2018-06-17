@@ -3,7 +3,7 @@ $phoneModal = $_POST['phoneModal'];
 $inputName = $_POST['inputName'];
 $messageBody = $_POST['messageBody'];
 
-$to = "79269902226@ya.ru";
+$to = "fw0rk@ya.ru";
 $subject = "Очень важное письмо";
 $text = "$messageBody\n\nС уважением,\n$inputName\n$phoneModal\n";
 
