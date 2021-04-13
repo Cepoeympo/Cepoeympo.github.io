@@ -1,1 +1,1 @@
-[![Cepoeympo.github.io](https://downloader.disk.yandex.ru/preview/77d1331107af509294ccfdec4c80d9f304254356fe1c2ca12c1470abfb5052c6/5f4ed07c/EE2TQIrpawRvLwUHyImNIEp_R49shXODEH8sAn_tIilFbP7UrB1ewnx2jfIV8AMUtWN-9qQ56QueDjk2e29BWA==?uid=0&filename=Screenshot_13.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&tknv=v2&owner_uid=20393693&size=2048x2048)](http://cepoeympo.github.io/)
+[![Cepoeympo.github.io](https://raw.githubusercontent.com/Cepoeympo/Cepoeympo.github.io/master/images/Ava2.jpg)](http://cepoeympo.github.io/)
