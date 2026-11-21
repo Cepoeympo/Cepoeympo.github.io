@@ -131,10 +131,13 @@
   .certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(126px,1fr));gap:12px}
   .cert{
     display:block;border:1px solid var(--line);padding:6px;background:#080c10;
-    cursor:pointer;transition:border-color .18s,box-shadow .2s
+    cursor:pointer;transition:border-color .18s,box-shadow .25s,transform .18s
   }
-  .cert:hover{border-color:var(--cy);box-shadow:0 0 20px rgba(53,230,224,.12)}
-  .cert img{display:block;width:100%;height:82px;object-fit:cover;filter:grayscale(.4)}
+  .cert:hover{
+    border-color:var(--mag);transform:translateY(-4px);
+    box-shadow:0 10px 28px rgba(255,47,126,.12)
+  }
+  .cert img{display:block;width:100%;height:82px;object-fit:cover;filter:grayscale(.5);transition:filter .3s}
   .cert:hover img{filter:none}
   .cert span{display:block;margin-top:7px;font-family:var(--mono);font-size:10px;line-height:1.35;color:var(--dim);letter-spacing:.04em}
 
@@ -270,6 +273,54 @@
   }
   .again:hover{filter:brightness(1.16);box-shadow:0 0 28px rgba(255,47,126,.35)}
 
+  /* --- джекпот: угадал с первой попытки --- */
+  .mbox.jackpot{
+    border-color:var(--mag);
+    animation:jackpot .95s steps(1,end) 1
+  }
+  @keyframes jackpot{
+    0%{filter:none;transform:none}
+    8%{filter:invert(1) hue-rotate(90deg);transform:translate(-9px,3px)}
+    18%{filter:none;transform:translate(8px,-4px)}
+    28%{filter:invert(1) hue-rotate(-120deg);transform:translate(-7px,2px)}
+    40%{filter:none;transform:translate(6px,-2px)}
+    54%{transform:translate(-4px,2px)}
+    70%{transform:translate(3px,-1px)}
+    100%{filter:none;transform:none}
+  }
+  .modal.pulse{animation:screenflash .55s ease-out 1}
+  @keyframes screenflash{
+    0%{background:rgba(255,255,255,.22)}
+    100%{background:rgba(3,5,7,.92)}
+  }
+  .win .wnum.jackpot{
+    color:var(--mag);
+    text-shadow:0 0 18px rgba(255,47,126,.9),0 0 48px rgba(255,47,126,.5);
+    animation:pulse2 .7s ease-in-out infinite
+  }
+  @keyframes pulse2{
+    0%,100%{transform:scale(1);text-shadow:0 0 18px rgba(255,47,126,.8),0 0 44px rgba(255,47,126,.4)}
+    50%{transform:scale(1.06);text-shadow:0 0 30px rgba(255,47,126,1),0 0 70px rgba(255,47,126,.6)}
+  }
+  .spark{
+    position:absolute;left:50%;top:56%;width:8px;height:8px;pointer-events:none;z-index:6;
+    border-radius:1px;box-shadow:0 0 14px currentColor, 0 0 30px currentColor
+  }
+  @keyframes spark{
+    0%{transform:translate(0,0) scale(1.1);opacity:1}
+    70%{opacity:.9}
+    100%{transform:translate(var(--dx),var(--dy)) scale(.15);opacity:0}
+  }
+  .ring{
+    position:absolute;left:50%;top:56%;width:120px;height:120px;margin:-60px 0 0 -60px;
+    border:2px solid var(--mag);border-radius:50%;pointer-events:none;z-index:5;
+    animation:ringout 1s ease-out forwards
+  }
+  @keyframes ringout{
+    0%{transform:scale(.15);opacity:.9;border-color:var(--mag)}
+    100%{transform:scale(2.6);opacity:0;border-color:var(--cy)}
+  }
+
   @media (max-width:480px){
     .mfield{flex-direction:column}
     #guessBtn{padding:12px}
@@ -353,7 +404,7 @@
       </div>
       <div class="card">
         <h3>Telegram-боты</h3>
-        <p>aiogram и Telethon, Mini Apps, сценарии с очередями и расписанием. Развёртывание на своём сервере, логи, автоперезапуск.</p>
+        <p>Telethon и aiogram, Mini Apps, сценарии с очередями и расписанием. Развёртывание на своём сервере, логи, автоперезапуск.</p>
       </div>
       <div class="card">
         <h3>Инфраструктура</h3>
@@ -654,7 +705,7 @@
 
   <div class="contact" id="contact">
     <div class="sh"><span class="num">06</span><h2>Связаться</h2></div>
-    <p class="big">Открыт к задачам по встраиваемым системам, ботам и автоматизации. Пишите — <a href="https://t.me/here_we_bot_again">в&nbsp;Telegram</a>.</p>
+    <p class="big">Открыт к задачам по встраиваемым системам, ботам и автоматизации. Пишите — <a href="https://t.me/here_we_bot_again">в&nbsp;Telegram</a></p>
   </div>
 
   <footer>
@@ -681,7 +732,7 @@
     </div>
 
     <div class="win" id="winBox">
-      <p class="wkind">сигнал захвачен</p>
+      <p class="wkind" id="winKind">сигнал захвачен</p>
       <p class="wt">Число найдено</p>
       <p class="wnum" id="winNum">0</p>
       <p class="ws" id="winSub">Попыток: 0</p>
@@ -733,6 +784,7 @@
   var mfield= document.getElementById('guessInput').parentNode;
   var winNum= document.getElementById('winNum');
   var winSub= document.getElementById('winSub');
+  var winKind=document.getElementById('winKind');
 
   var target, tries, lo, hi, over;
 
@@ -749,6 +801,29 @@
       if (mttl) mttl.classList.remove('glitch');
     }, 520);
   }
+  function burst(){
+    for (var i = 0; i < 38; i++){
+      var s = document.createElement('i');
+      s.className = 'spark';
+      var a = Math.random() * Math.PI * 2;
+      var d = 45 + Math.random() * 130;
+      var col = Math.random() > 0.5 ? '#35e6e0' : '#ff2f7e';
+      s.style.background = col;
+      s.style.color = col;
+      mbox.appendChild(s);
+      if (s.animate){
+        s.animate([
+          { transform: 'translate(0,0) scale(1.2)', opacity: 1 },
+          { transform: 'translate(' + (Math.cos(a) * d) + 'px,' + (Math.sin(a) * d) + 'px) scale(.12)', opacity: 0 }
+        ], { duration: 1400, delay: Math.random() * 90, easing: 'cubic-bezier(.15,.75,.35,1)', fill: 'forwards' });
+      }
+      (function(el){ setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 1600); })(s);
+    }
+    var ring = document.createElement('div');
+    ring.className = 'ring';
+    mbox.appendChild(ring);
+    setTimeout(function(){ if (ring.parentNode) ring.parentNode.removeChild(ring); }, 1100);
+  }
   function shake(){
     mfield.classList.add('bad');
     setTimeout(function(){ mfield.classList.remove('bad'); }, 320);
@@ -758,7 +833,10 @@
   function resetGame(){
     target = rnd(); tries = 0; lo = 1; hi = 100; over = false;
     gIn.value = ''; gIn.disabled = false; gBtn.disabled = false;
-    mbox.classList.remove('won');
+    mbox.classList.remove('won', 'jackpot');
+    modal.classList.remove('pulse');
+    winNum.classList.remove('jackpot');
+    winKind.textContent = 'сигнал захвачен';
     say('Попыток: 0'); stat();
     flash();
     setTimeout(function(){ try { gIn.focus(); } catch(e){} }, 80);
@@ -781,8 +859,25 @@
     if (v === target) {
       over = true;
       winNum.textContent = v;
-      winSub.textContent = 'Попыток: ' + tries + ' · диапазон закрыт';
       mbox.classList.add('won');
+
+      if (tries === 1) {
+        winKind.textContent = 'первая попытка';
+        winSub.textContent = 'С первой попытки. НЛО в шоке.';
+        winNum.classList.add('jackpot');
+        mbox.classList.add('jackpot');
+        modal.classList.add('pulse');
+        burst();
+        setTimeout(function(){
+          mbox.classList.remove('jackpot');
+          modal.classList.remove('pulse');
+        }, 1300);
+      } else {
+        winKind.textContent = 'сигнал захвачен';
+        winSub.textContent = 'Попыток: ' + tries + ' · диапазон закрыт';
+        winNum.classList.remove('jackpot');
+      }
+
       flash();
       return;
     }
