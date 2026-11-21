@@ -208,6 +208,68 @@
     font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;cursor:pointer;transition:.15s}
   .mghost:hover{color:var(--cy);border-color:var(--cy)}
 
+  /* --- киберпанк-эффекты --- */
+  .mbox::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:repeating-linear-gradient(180deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px)
+  }
+  .mbox::after{
+    content:"";position:absolute;left:0;right:0;height:90px;top:-90px;pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(53,230,224,.08), transparent);
+    animation:beam 4.5s linear infinite
+  }
+  @keyframes beam{from{top:-90px}to{top:100%}}
+
+  .mbox.glitch{animation:qglitch .42s steps(2,end) 1}
+  @keyframes qglitch{
+    0%{transform:translate(0,0)}
+    20%{transform:translate(-4px,1px)}
+    40%{transform:translate(3px,-1px)}
+    60%{transform:translate(-2px,0)}
+    80%{transform:translate(2px,1px)}
+    100%{transform:translate(0,0)}
+  }
+  .mttl.glitch{animation:tglitch .5s steps(3,end) 1}
+  @keyframes tglitch{
+    0%{text-shadow:-2px 0 var(--mag),2px 0 var(--cy);transform:translateX(-2px)}
+    50%{text-shadow:2px 0 var(--mag),-2px 0 var(--cy);transform:translateX(2px)}
+    100%{text-shadow:none;transform:none}
+  }
+  .mfield.bad{animation:shake .3s ease}
+  @keyframes shake{
+    0%,100%{transform:translateX(0)}
+    20%{transform:translateX(-6px)}
+    40%{transform:translateX(5px)}
+    60%{transform:translateX(-3px)}
+    80%{transform:translateX(2px)}
+  }
+
+  /* экран победы */
+  .win{display:none}
+  .mbox.won .win{display:block}
+  .mbox.won .mfield,
+  .mbox.won .mmsg,
+  .mbox.won .mrow,
+  .mbox.won .mdesc{display:none}
+  .mbox.won{border-color:var(--cy);box-shadow:0 0 80px rgba(53,230,224,.16), inset 0 0 60px rgba(53,230,224,.04)}
+  .win .wkind{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--mag);margin:0 0 6px}
+  .win .wt{font-family:var(--mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;
+    color:#eef7f9;margin:0 0 14px}
+  .win .wnum{
+    font-family:var(--mono);font-size:58px;line-height:1;letter-spacing:.08em;color:var(--cy);
+    margin:0 0 6px;text-shadow:0 0 26px rgba(53,230,224,.55);
+    animation:pulse 2.4s ease-in-out infinite
+  }
+  @keyframes pulse{0%,100%{text-shadow:0 0 22px rgba(53,230,224,.45)}50%{text-shadow:0 0 40px rgba(53,230,224,.8)}}
+  .win .ws{font-family:var(--mono);font-size:12px;color:var(--mid);letter-spacing:.08em;margin:0 0 22px}
+  .again{
+    width:100%;background:var(--mag);color:#0a0206;border:none;padding:14px 16px;cursor:pointer;
+    font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+    transition:filter .15s,box-shadow .2s
+  }
+  .again:hover{filter:brightness(1.16);box-shadow:0 0 28px rgba(255,47,126,.35)}
+
   @media (max-width:480px){
     .mfield{flex-direction:column}
     #guessBtn{padding:12px}
@@ -603,7 +665,7 @@
 </div>
 
 <div class="modal" id="gameModal" aria-hidden="true">
-  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="gt">
+  <div class="mbox" id="mbox" role="dialog" aria-modal="true" aria-labelledby="gt">
     <button class="mclose" id="closeGame" type="button" aria-label="Закрыть">✕</button>
     <p class="mkind">01 / логика</p>
     <h3 class="mttl" id="gt">Угадай число</h3>
@@ -616,6 +678,14 @@
     <div class="mrow">
       <span class="mstat" id="guessStat">диапазон 1–100</span>
       <button id="resetBtn" class="mghost" type="button">Заново</button>
+    </div>
+
+    <div class="win" id="winBox">
+      <p class="wkind">сигнал захвачен</p>
+      <p class="wt">Число найдено</p>
+      <p class="wnum" id="winNum">0</p>
+      <p class="ws" id="winSub">Попыток: 0</p>
+      <button id="againBtn" class="again" type="button">Играть снова</button>
     </div>
   </div>
 </div>
@@ -658,6 +728,11 @@
   var gMsg  = document.getElementById('guessMsg');
   var gStat = document.getElementById('guessStat');
   var gBtn  = document.getElementById('guessBtn');
+  var mbox  = document.getElementById('mbox');
+  var mttl  = document.getElementById('gt');
+  var mfield= document.getElementById('guessInput').parentNode;
+  var winNum= document.getElementById('winNum');
+  var winSub= document.getElementById('winSub');
 
   var target, tries, lo, hi, over;
 
@@ -666,18 +741,33 @@
     gMsg.className = 'mmsg' + (cls ? ' ' + cls : '');
   }
   function stat(){ gStat.textContent = 'диапазон ' + lo + '–' + hi; }
+  function flash(){
+    mbox.classList.add('glitch');
+    if (mttl) mttl.classList.add('glitch');
+    setTimeout(function(){
+      mbox.classList.remove('glitch');
+      if (mttl) mttl.classList.remove('glitch');
+    }, 520);
+  }
+  function shake(){
+    mfield.classList.add('bad');
+    setTimeout(function(){ mfield.classList.remove('bad'); }, 320);
+  }
   function rnd(){ return 1 + Math.floor(Math.random() * 100); }
 
   function resetGame(){
     target = rnd(); tries = 0; lo = 1; hi = 100; over = false;
     gIn.value = ''; gIn.disabled = false; gBtn.disabled = false;
+    mbox.classList.remove('won');
     say('Попыток: 0'); stat();
+    flash();
+    setTimeout(function(){ try { gIn.focus(); } catch(e){} }, 80);
   }
   function openGame(){
-    if (over === undefined) resetGame();
+    if (over === undefined) resetGame(); else flash();
     modal.classList.add('on');
     modal.setAttribute('aria-hidden', 'false');
-    setTimeout(function(){ gIn.focus(); }, 80);
+    setTimeout(function(){ try { gIn.focus(); } catch(e){} }, 80);
   }
   function closeGame(){
     modal.classList.remove('on');
@@ -686,13 +776,14 @@
   function check(){
     if (over) return;
     var v = parseInt(gIn.value, 10);
-    if (!v || v < 1 || v > 100) { say('Нужно целое число от 1 до 100', 'lo'); return; }
+    if (!v || v < 1 || v > 100) { say('Нужно целое число от 1 до 100', 'lo'); shake(); return; }
     tries++;
     if (v === target) {
       over = true;
-      say('Победа. Попыток: ' + tries + '. НЛО не верит своим глазам.', 'hi');
-      gStat.textContent = 'цель: ' + target;
-      gIn.disabled = true; gBtn.disabled = true;
+      winNum.textContent = v;
+      winSub.textContent = 'Попыток: ' + tries + ' · диапазон закрыт';
+      mbox.classList.add('won');
+      flash();
       return;
     }
     if (v < target) {
@@ -710,6 +801,7 @@
   document.getElementById('openGame').addEventListener('click', openGame);
   document.getElementById('closeGame').addEventListener('click', closeGame);
   document.getElementById('resetBtn').addEventListener('click', resetGame);
+  document.getElementById('againBtn').addEventListener('click', resetGame);
   gBtn.addEventListener('click', check);
   gIn.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
   modal.addEventListener('click', function(e){ if (e.target === modal) closeGame(); });
