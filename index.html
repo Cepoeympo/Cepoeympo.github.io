@@ -39,6 +39,18 @@
   .nav ul{display:flex;gap:20px;margin:0;padding:0;list-style:none;flex-wrap:wrap}
   .nav a{color:var(--dim);text-decoration:none;transition:color .15s}
   .nav a:hover{color:var(--cy)}
+  .lang{
+    background:transparent;border:1px solid var(--line-hi);color:var(--dim);
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:5px 20px 5px 8px;
+    cursor:pointer;outline:none;transition:color .15s,border-color .15s;appearance:none;
+    -webkit-appearance:none;text-align:center;
+    background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
+                     linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+    background-position:calc(100% - 10px) 50%, calc(100% - 6px) 50%;
+    background-size:4px 4px,4px 4px;background-repeat:no-repeat
+  }
+  .lang:hover,.lang:focus{color:var(--cy);border-color:var(--cy)}
+  .lang option{background:#0a0e12;color:var(--fg)}
 
   /* ---------- hero ---------- */
   .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
@@ -371,13 +383,17 @@
 
   <nav class="nav">
     <a class="mark" href="#top">ac://</a>
+    <select class="lang" id="langSel" aria-label="Language">
+      <option value="ru">RU</option><option value="en">EN</option><option value="de">DE</option>
+      <option value="fr">FR</option><option value="es">ES</option><option value="zh">中文</option><option value="ja">日本語</option>
+    </select>
     <ul>
-      <li><a href="#about">01 профиль</a></li>
-      <li><a href="#projects">02 проекты</a></li>
-      <li><a href="#exp">03 опыт</a></li>
-      <li><a href="#certs">04 сертификаты</a></li>
-      <li><a href="#game">05 игра</a></li>
-      <li><a href="#contact">06 контакт</a></li>
+      <li><a href="#about" data-i18n="nav.about">01 профиль</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">02 проекты</a></li>
+      <li><a href="#exp" data-i18n="nav.exp">03 опыт</a></li>
+      <li><a href="#certs" data-i18n="nav.certs">04 сертификаты</a></li>
+      <li><a href="#game" data-i18n="nav.game">05 игра</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">06 контакт</a></li>
     </ul>
   </nav>
 
@@ -385,9 +401,9 @@
     <div class="hero-top">
       <img class="avatar" src="images/ava-main.jpg" alt="Андрей Цветков">
       <div style="flex:1">
-        <div class="plate" id="name"><h1>Андрей Цветков</h1></div>
-        <p class="tagline">Железо, прошивки и боты.<br><b>Довожу до рабочего состояния.</b></p>
-        <p class="intro">
+        <div class="plate" id="name"><h1 data-i18n="hero.name">Андрей Цветков</h1></div>
+        <p class="tagline" data-i18n-html="hero.tag">Железо, прошивки и боты.<br><b>Довожу до рабочего состояния.</b></p>
+        <p class="intro" data-i18n="hero.intro">
           Инженер на производстве и разработчик. Пишу встраиваемое ПО, Telegram-боты,
           парсеры и держу Linux-инфраструктуру. Девять лет в промышленной инженерии —
           за моим кодом стоит живое оборудование, а не только тесты.
@@ -402,198 +418,198 @@
   </header>
 
   <section id="about">
-    <div class="sh"><span class="num">01</span><h2>Чем занимаюсь</h2></div>
+    <div class="sh"><span class="num">01</span><h2 data-i18n="sec.about">Чем занимаюсь</h2></div>
     <div class="grid">
       <div class="card">
-        <h3>Встраиваемые системы</h3>
-        <p>ESP32 и STM32, шаговые приводы, датчики, дисплеи. Прошивки на C/C++ для устройств, которые работают руками, а не в демо.</p>
+        <h3 data-i18n="about.c1.t">Встраиваемые системы</h3>
+        <p data-i18n="about.c1.d">ESP32 и STM32, шаговые приводы, датчики, дисплеи. Прошивки на C/C++ для устройств, которые работают руками, а не в демо.</p>
       </div>
       <div class="card">
-        <h3>Telegram-боты</h3>
-        <p>Telethon и aiogram, Mini Apps, сценарии с очередями и расписанием. Развёртывание на своём сервере, логи, автоперезапуск.</p>
+        <h3 data-i18n="about.c2.t">Telegram-боты</h3>
+        <p data-i18n="about.c2.d">Telethon и aiogram, Mini Apps, сценарии с очередями и расписанием. Развёртывание на своём сервере, логи, автоперезапуск.</p>
       </div>
       <div class="card">
-        <h3>Инфраструктура</h3>
-        <p>Debian, systemd, Docker, nginx, оркестрация деплоя и резервные копии. Чтобы сервисы жили, а не «работали у меня локально».</p>
+        <h3 data-i18n="about.c3.t">Инфраструктура</h3>
+        <p data-i18n="about.c3.d">Debian, systemd, Docker, nginx, оркестрация деплоя и резервные копии. Чтобы сервисы жили, а не «работали у меня локально».</p>
       </div>
       <div class="card">
-        <h3>Данные</h3>
-        <p>Парсеры каталогов и маркетплейсов, обход пагинации и защит, нормализация в базу, выгрузки и API поверх собранного.</p>
+        <h3 data-i18n="about.c4.t">Данные</h3>
+        <p data-i18n="about.c4.d">Парсеры каталогов и маркетплейсов, обход пагинации и защит, нормализация в базу, выгрузки и API поверх собранного.</p>
       </div>
       <div class="card">
-        <h3>3D-печать</h3>
-        <p>Перевёл Geralkom Vector A4 на Klipper: Manta M8P с CB1, драйверы TMC2209, экструдер Orbiter 2.5, хотэнд CHCV6, MicroProbe и KAMP. Принтер подключён к Telegram-боту и встроен в домашний стек. Разрабатываю и печатаю — детали для ремонта и апгрейда станков, различного оборудования и механику для своих проектов.</p>
+        <h3 data-i18n="about.c5.t">3D-печать</h3>
+        <p data-i18n="about.c5.d">Перевёл Geralkom Vector A4 на Klipper: Manta M8P с CB1, драйверы TMC2209, экструдер Orbiter 2.5, хотэнд CHCV6, MicroProbe и KAMP. Принтер подключён к Telegram-боту и встроен в домашний стек. Разрабатываю и печатаю — детали для ремонта и апгрейда станков, различного оборудования и механику для своих проектов.</p>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <div class="sh"><span class="num">02</span><h2>Проекты</h2></div>
+    <div class="sh"><span class="num">02</span><h2 data-i18n="sec.projects">Проекты</h2></div>
 
     <div class="proj">
-      <div class="meta">Боты<span class="st">в работе</span></div>
+      <div class="meta"><span data-i18n="proj1.kind">Боты</span><span class="st" data-i18n="st.work">в работе</span></div>
       <div>
-        <h3>Парк из шести Telegram-ботов</h3>
-        <p>Фильтр контента по каналам, нарезка YouTube, дайджест прокси, очередь мемов, выгрузка медиа, напоминания о днях рождения. Каждый — отдельный systemd-юнит на собственном сервере, с логированием и автоперезапуском.</p>
+        <h3 data-i18n="proj1.t">Парк из шести Telegram-ботов</h3>
+        <p data-i18n="proj1.d">Фильтр контента по каналам, нарезка YouTube, дайджест прокси, очередь мемов, выгрузка медиа, напоминания о днях рождения. Каждый — отдельный systemd-юнит на собственном сервере, с логированием и автоперезапуском.</p>
       </div>
     </div>
 
     <div class="proj">
-      <div class="meta">Mini App<span class="st">в работе</span></div>
+      <div class="meta"><span data-i18n="proj2.kind">Mini App</span><span class="st" data-i18n="st.work">в работе</span></div>
       <div>
-        <h3>Витрина магазина в Telegram</h3>
-        <p>Mini App для косметики: каталог, карточки товаров, связка с ботом. Статика на GitHub Pages, данные из бота.</p>
+        <h3 data-i18n="proj2.t">Витрина магазина в Telegram</h3>
+        <p data-i18n="proj2.d">Mini App для косметики: каталог, карточки товаров, связка с ботом. Статика на GitHub Pages, данные из бота.</p>
       </div>
     </div>
 
     <div class="proj">
-      <div class="meta">Embedded<span class="st off">остановлен</span></div>
+      <div class="meta"><span data-i18n="proj3.kind">Embedded</span><span class="st off" data-i18n="st.stop">остановлен</span></div>
       <div>
-        <h3>Станок опрессовки трубок</h3>
-        <p>Собственная прошивка на C++ и управление двумя шаговыми приводами NEMA24 через MKS Monster8. Ручной и автоматический режимы, концевики и кнопка аварийной остановки. Задача закрыта на стороне заказчика до пуска.</p>
+        <h3 data-i18n="proj3.t">Станок опрессовки трубок</h3>
+        <p data-i18n="proj3.d">Собственная прошивка на C++ и управление двумя шаговыми приводами NEMA24 через MKS Monster8. Ручной и автоматический режимы, концевики и кнопка аварийной остановки. Задача закрыта на стороне заказчика до пуска.</p>
       </div>
     </div>
 
     <div class="proj">
-      <div class="meta">PWA<span class="st done">завершён</span></div>
+      <div class="meta"><span data-i18n="proj4.kind">PWA</span><span class="st done" data-i18n="st.done">завершён</span></div>
       <div>
-        <h3>Sweet Calc</h3>
-        <p>Офлайн-калькулятор для домашней кондитерской: себестоимость, техкарты, пропорции замеса, КБЖУ. Данные остаются на устройстве, работает без интернета.</p>
+        <h3 data-i18n="proj4.t">Sweet Calc</h3>
+        <p data-i18n="proj4.d">Офлайн-калькулятор для домашней кондитерской: себестоимость, техкарты, пропорции замеса, КБЖУ. Данные остаются на устройстве, работает без интернета.</p>
       </div>
     </div>
 
     <div class="proj">
-      <div class="meta">Android · ПК<span class="st done">завершён</span></div>
+      <div class="meta"><span data-i18n="proj5.kind">Android · ПК</span><span class="st done" data-i18n="st.done">завершён</span></div>
       <div>
-        <h3>Лёгкий клиент для музыки</h3>
-        <p>Kotlin и Compose, Media3, FLAC без потерь, корректные переходы между треками. Две версии — для телефона и для компьютера. Собственная сборка вместо тяжёлого клиента.</p>
+        <h3 data-i18n="proj5.t">Лёгкий клиент для музыки</h3>
+        <p data-i18n="proj5.d">Kotlin и Compose, Media3, FLAC без потерь, корректные переходы между треками. Две версии — для телефона и для компьютера. Собственная сборка вместо тяжёлого клиента.</p>
       </div>
     </div>
   </section>
 
   <section id="exp">
-    <div class="sh"><span class="num">03</span><h2>Опыт</h2></div>
+    <div class="sh"><span class="num">03</span><h2 data-i18n="sec.exp">Опыт</h2></div>
     <div class="tl">
 
       <details class="job now">
         <summary>
-          <span class="yr">апрель 2024 — сейчас</span>
-          <span class="role">Инженер</span>
-          <span class="org">НК «Фламена» · производство БАДов и косметики</span>
+          <span class="yr" data-i18n="e1.yr">апрель 2024 — сейчас</span>
+          <span class="role" data-i18n="e1.role">Инженер</span>
+          <span class="org" data-i18n="e1.org">НК «Фламена» · производство БАДов и косметики</span>
         </summary>
         <div class="jb">
-          <p>Производственные и технологические процессы закрыты договором о неразглашении.</p>
+          <p data-i18n="e1.p1">Производственные и технологические процессы закрыты договором о неразглашении.</p>
         </div>
       </details>
 
       <details class="job now">
         <summary>
-          <span class="yr">октябрь 2024 — сейчас</span>
-          <span class="role">Разработчик Telegram-ботов</span>
-          <span class="org">Фриланс</span>
+          <span class="yr" data-i18n="e2.yr">октябрь 2024 — сейчас</span>
+          <span class="role" data-i18n="e2.role">Разработчик Telegram-ботов</span>
+          <span class="org" data-i18n="e2.org">Фриланс</span>
         </summary>
         <div class="jb">
-          <p>Разрабатываю Telegram-ботов под ключ: от идеи и сценариев до запуска и поддержки. Настраиваю инфраструктуру, хостинг и автоматизацию процессов.</p>
+          <p data-i18n="e2.p1">Разрабатываю Telegram-ботов под ключ: от идеи и сценариев до запуска и поддержки. Настраиваю инфраструктуру, хостинг и автоматизацию процессов.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">январь 2017 — март 2024</span>
-          <span class="role">Инженер</span>
-          <span class="org">АО «ВПК „НПО машиностроения“»</span>
+          <span class="yr" data-i18n="e3.yr">январь 2017 — март 2024</span>
+          <span class="role" data-i18n="e3.role">Инженер</span>
+          <span class="org" data-i18n="e3.org">АО «ВПК „НПО машиностроения“»</span>
         </summary>
         <div class="jb">
-          <p>Работа в закрытом контуре: тематика и задачи ограничены договором.</p>
+          <p data-i18n="e3.p1">Работа в закрытом контуре: тематика и задачи ограничены договором.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">ноябрь 2015 — декабрь 2016</span>
-          <span class="role">Мастер-прораб строительного участка</span>
-          <span class="org">Фонд капитального ремонта г. Москвы</span>
+          <span class="yr" data-i18n="e4.yr">ноябрь 2015 — декабрь 2016</span>
+          <span class="role" data-i18n="e4.role">Мастер-прораб строительного участка</span>
+          <span class="org" data-i18n="e4.org">Фонд капитального ремонта г. Москвы</span>
         </summary>
         <div class="jb">
-          <p>Вёл участок капитального ремонта от открытия до сдачи. Договаривался с собственниками о доступе в квартиры, собирал бригады под каждый вид работ, принимал результат. Отвечал за сроки, качество и технику безопасности, вёл расход материалов и инструмента, держал в порядке стройгородок.</p>
+          <p data-i18n="e4.p1">Вёл участок капитального ремонта от открытия до сдачи. Договаривался с собственниками о доступе в квартиры, собирал бригады под каждый вид работ, принимал результат. Отвечал за сроки, качество и технику безопасности, вёл расход материалов и инструмента, держал в порядке стройгородок.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">сентябрь 2014 — январь 2024</span>
-          <span class="role">Фотограф / ретушёр</span>
-          <span class="org">Фриланс</span>
+          <span class="yr" data-i18n="e5.yr">сентябрь 2014 — январь 2024</span>
+          <span class="role" data-i18n="e5.role">Фотограф / ретушёр</span>
+          <span class="org" data-i18n="e5.org">Фриланс</span>
         </summary>
         <div class="jb">
-          <p>Фотография — хобби, которое позволяет зарабатывать и продолжает приносить удовольствие.</p>
+          <p data-i18n="e5.p1">Фотография — хобби, которое позволяет зарабатывать и продолжает приносить удовольствие.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">сентябрь 2014 — сентябрь 2021</span>
-          <span class="role">Веб-разработчик / HTML-верстальщик</span>
-          <span class="org">Фриланс</span>
+          <span class="yr" data-i18n="e6.yr">сентябрь 2014 — сентябрь 2021</span>
+          <span class="role" data-i18n="e6.role">Веб-разработчик / HTML-верстальщик</span>
+          <span class="org" data-i18n="e6.org">Фриланс</span>
         </summary>
         <div class="jb">
-          <p>Вёрстка и разработка сайтов: HTML5, CSS3, JavaScript, PHP, MySQL. Сборка проектов на gulp, препроцессоры SASS/SCSS, Bootstrap, WordPress. Адаптивность, юзабилити, доработка чужого кода.</p>
+          <p data-i18n="e6.p1">Вёрстка и разработка сайтов: HTML5, CSS3, JavaScript, PHP, MySQL. Сборка проектов на gulp, препроцессоры SASS/SCSS, Bootstrap, WordPress. Адаптивность, юзабилити, доработка чужого кода.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">август 2013 — август 2015</span>
-          <span class="role">Руководитель строительства</span>
-          <span class="org">Частный дом · Астраханская область</span>
+          <span class="yr" data-i18n="e7.yr">август 2013 — август 2015</span>
+          <span class="role" data-i18n="e7.role">Руководитель строительства</span>
+          <span class="org" data-i18n="e7.org">Частный дом · Астраханская область</span>
         </summary>
         <div class="jb">
-          <p>Два сезона вёл стройку трёхэтажного дома, благоустройство участка и организацию причала. Подбирал подрядчиков на фундамент, отделку, сантехнику, столярку и кровлю, ставил задачи и принимал работы. Технологии разбирал сам, с поправкой на местные условия и поставки, чтобы не зависеть от чужих обещаний.</p>
-          <p>Снабжение шло без простоев: инструмент и материалы привозил из Москвы, Санкт-Петербурга и Волгограда. Дом построен, участок благоустроен, видеонаблюдение настроено, причал на месте.</p>
+          <p data-i18n="e7.p1">Два сезона вёл стройку трёхэтажного дома, благоустройство участка и организацию причала. Подбирал подрядчиков на фундамент, отделку, сантехнику, столярку и кровлю, ставил задачи и принимал работы. Технологии разбирал сам, с поправкой на местные условия и поставки, чтобы не зависеть от чужих обещаний.</p>
+          <p data-i18n="e7.p2">Снабжение шло без простоев: инструмент и материалы привозил из Москвы, Санкт-Петербурга и Волгограда. Дом построен, участок благоустроен, видеонаблюдение настроено, причал на месте.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">ноябрь 2012 — февраль 2013</span>
-          <span class="role">Агент по недвижимости</span>
-          <span class="org">Агентство недвижимости · Паттайя, Таиланд</span>
+          <span class="yr" data-i18n="e8.yr">ноябрь 2012 — февраль 2013</span>
+          <span class="role" data-i18n="e8.role">Агент по недвижимости</span>
+          <span class="org" data-i18n="e8.org">Агентство недвижимости · Паттайя, Таиланд</span>
         </summary>
         <div class="jb">
-          <p>Работал с русскоязычными покупателями на рынке Паттайи: подбирал объекты под запрос и бюджет, проводил показы, готовил и оформлял документы сделки. Разобрался в местной юридической практике и ценообразовании без знания языка и рынка.</p>
+          <p data-i18n="e8.p1">Работал с русскоязычными покупателями на рынке Паттайи: подбирал объекты под запрос и бюджет, проводил показы, готовил и оформлял документы сделки. Разобрался в местной юридической практике и ценообразовании без знания языка и рынка.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">август 2011 — июль 2012</span>
-          <span class="role">Менеджер по продаже автомобилей</span>
-          <span class="org">ООО «Дженсер Сервис С6» · Москва</span>
+          <span class="yr" data-i18n="e9.yr">август 2011 — июль 2012</span>
+          <span class="role" data-i18n="e9.role">Менеджер по продаже автомобилей</span>
+          <span class="org" data-i18n="e9.org">ООО «Дженсер Сервис С6» · Москва</span>
         </summary>
         <div class="jb">
-          <p>Оценивал автомобили с пробегом и ставил цену под рынок, вёл клиентов в салоне и по телефону, поддерживал базу и актуальность объявлений. Проводил показы, закрывал сделки, оформлял документы по корпоративным стандартам, продавал дополнительное оборудование и услуги.</p>
+          <p data-i18n="e9.p1">Оценивал автомобили с пробегом и ставил цену под рынок, вёл клиентов в салоне и по телефону, поддерживал базу и актуальность объявлений. Проводил показы, закрывал сделки, оформлял документы по корпоративным стандартам, продавал дополнительное оборудование и услуги.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">январь 2010 — апрель 2011</span>
-          <span class="role">Агент по загородной недвижимости</span>
-          <span class="org">Агентство недвижимости №1 · Москва</span>
+          <span class="yr" data-i18n="e10.yr">январь 2010 — апрель 2011</span>
+          <span class="role" data-i18n="e10.role">Агент по загородной недвижимости</span>
+          <span class="org" data-i18n="e10.org">Агентство недвижимости №1 · Москва</span>
         </summary>
         <div class="jb">
-          <p>Работал с загородными домами Подмосковья: знал, что и по какой цене стоит на каждом направлении, и подбирал варианты под запрос человека, а не под прайс. Возил клиентов на показы, договаривался с собственниками, готовил договор и документы.</p>
+          <p data-i18n="e10.p1">Работал с загородными домами Подмосковья: знал, что и по какой цене стоит на каждом направлении, и подбирал варианты под запрос человека, а не под прайс. Возил клиентов на показы, договаривался с собственниками, готовил договор и документы.</p>
         </div>
       </details>
 
       <details class="job">
         <summary>
-          <span class="yr">сентябрь 2003 — август 2005</span>
-          <span class="role">Автомеханик</span>
-          <span class="org">Автосервис · Реутов</span>
+          <span class="yr" data-i18n="e11.yr">сентябрь 2003 — август 2005</span>
+          <span class="role" data-i18n="e11.role">Автомеханик</span>
+          <span class="org" data-i18n="e11.org">Автосервис · Реутов</span>
         </summary>
         <div class="jb">
-          <p>Проходил производственную практику, которая переросла в подработку.</p>
+          <p data-i18n="e11.p1">Проходил производственную практику, которая переросла в подработку.</p>
         </div>
       </details>
 
@@ -601,50 +617,50 @@
   </section>
 
   <section id="certs">
-    <div class="sh"><span class="num">04</span><h2>Сертификаты</h2></div>
+    <div class="sh"><span class="num">04</span><h2 data-i18n="sec.certs">Сертификаты</h2></div>
     <div class="certs">
-      <div class="cert" data-full="images/originals/netology_swift_osnovi.jpg"><img src="images/thumbnails/netology_swift_osnovi.jpg" alt="Основы Swift" loading="lazy"><span>Основы Swift · Нетология 2020</span></div>
-      <div class="cert" data-full="images/originals/netology_swift_advanced.jpg"><img src="images/thumbnails/netology_swift_advanced.jpg" alt="Основы Swift Advanced" loading="lazy"><span>Swift Advanced · Нетология 2020</span></div>
-      <div class="cert" data-full="images/originals/netology_GIT.jpg"><img src="images/thumbnails/netology_GIT.jpg" alt="Git" loading="lazy"><span>Git · Нетология 2020</span></div>
-      <div class="cert" data-full="images/originals/netology_soft-skills.jpg"><img src="images/thumbnails/netology_soft-skills.jpg" alt="Soft Skills" loading="lazy"><span>Soft Skills · Нетология 2020</span></div>
-      <div class="cert" data-full="images/originals/git.jpg"><img src="images/thumbnails/git.jpg" alt="Git быстрый старт" loading="lazy"><span>Git: быстрый старт · GeekBrains 2016</span></div>
-      <div class="cert" data-full="images/originals/html_css_1.jpg"><img src="images/thumbnails/html_css_1.jpg" alt="HTML и CSS" loading="lazy"><span>HTML &amp; CSS · GeekBrains 2016</span></div>
-      <div class="cert" data-full="images/originals/html_css_2.jpg"><img src="images/thumbnails/html_css_2.jpg" alt="HTML и CSS средний уровень" loading="lazy"><span>HTML &amp; CSS, средний · GeekBrains</span></div>
-      <div class="cert" data-full="images/originals/php.jpg"><img src="images/thumbnails/php.jpg" alt="PHP" loading="lazy"><span>PHP: быстрый старт · GeekBrains 2016</span></div>
-      <div class="cert" data-full="images/originals/javascript_1.jpg"><img src="images/thumbnails/javascript_1.jpg" alt="JavaScript" loading="lazy"><span>JavaScript · GeekBrains</span></div>
-      <div class="cert" data-full="images/originals/programming_basic.jpg"><img src="images/thumbnails/programming_basic.jpg" alt="Основы программирования" loading="lazy"><span>Основы программирования</span></div>
-      <div class="cert" data-full="images/originals/programming_basic_online.jpg"><img src="images/thumbnails/programming_basic_online.jpg" alt="Основы программирования, онлайн" loading="lazy"><span>Основы программирования · онлайн</span></div>
-      <div class="cert" data-full="images/originals/programming_basic_video.jpg"><img src="images/thumbnails/programming_basic_video.jpg" alt="Основы программирования, видео" loading="lazy"><span>Основы программирования · видео</span></div>
-      <div class="cert" data-full="images/originals/photoshop.jpg"><img src="images/thumbnails/photoshop.jpg" alt="Photoshop" loading="lazy"><span>Photoshop · GeekBrains</span></div>
-      <div class="cert" data-full="images/originals/photoplay.jpg"><img src="images/thumbnails/photoplay.jpg" alt="Работа с моделью" loading="lazy"><span>Работа с моделью · Photoplay 2015</span></div>
+      <div class="cert" data-full="images/originals/netology_swift_osnovi.jpg"><img src="images/thumbnails/netology_swift_osnovi.jpg" alt="Основы Swift" loading="lazy"><span data-i18n="cert.1">Основы Swift · Нетология 2020</span></div>
+      <div class="cert" data-full="images/originals/netology_swift_advanced.jpg"><img src="images/thumbnails/netology_swift_advanced.jpg" alt="Основы Swift Advanced" loading="lazy"><span data-i18n="cert.2">Swift Advanced · Нетология 2020</span></div>
+      <div class="cert" data-full="images/originals/netology_GIT.jpg"><img src="images/thumbnails/netology_GIT.jpg" alt="Git" loading="lazy"><span data-i18n="cert.3">Git · Нетология 2020</span></div>
+      <div class="cert" data-full="images/originals/netology_soft-skills.jpg"><img src="images/thumbnails/netology_soft-skills.jpg" alt="Soft Skills" loading="lazy"><span data-i18n="cert.4">Soft Skills · Нетология 2020</span></div>
+      <div class="cert" data-full="images/originals/git.jpg"><img src="images/thumbnails/git.jpg" alt="Git быстрый старт" loading="lazy"><span data-i18n="cert.5">Git: быстрый старт · GeekBrains 2016</span></div>
+      <div class="cert" data-full="images/originals/html_css_1.jpg"><img src="images/thumbnails/html_css_1.jpg" alt="HTML и CSS" loading="lazy"><span data-i18n="cert.6">HTML &amp; CSS · GeekBrains 2016</span></div>
+      <div class="cert" data-full="images/originals/html_css_2.jpg"><img src="images/thumbnails/html_css_2.jpg" alt="HTML и CSS средний уровень" loading="lazy"><span data-i18n="cert.7">HTML &amp; CSS, средний · GeekBrains</span></div>
+      <div class="cert" data-full="images/originals/php.jpg"><img src="images/thumbnails/php.jpg" alt="PHP" loading="lazy"><span data-i18n="cert.8">PHP: быстрый старт · GeekBrains 2016</span></div>
+      <div class="cert" data-full="images/originals/javascript_1.jpg"><img src="images/thumbnails/javascript_1.jpg" alt="JavaScript" loading="lazy"><span data-i18n="cert.9">JavaScript · GeekBrains</span></div>
+      <div class="cert" data-full="images/originals/programming_basic.jpg"><img src="images/thumbnails/programming_basic.jpg" alt="Основы программирования" loading="lazy"><span data-i18n="cert.10">Основы программирования</span></div>
+      <div class="cert" data-full="images/originals/programming_basic_online.jpg"><img src="images/thumbnails/programming_basic_online.jpg" alt="Основы программирования, онлайн" loading="lazy"><span data-i18n="cert.11">Основы программирования · онлайн</span></div>
+      <div class="cert" data-full="images/originals/programming_basic_video.jpg"><img src="images/thumbnails/programming_basic_video.jpg" alt="Основы программирования, видео" loading="lazy"><span data-i18n="cert.12">Основы программирования · видео</span></div>
+      <div class="cert" data-full="images/originals/photoshop.jpg"><img src="images/thumbnails/photoshop.jpg" alt="Photoshop" loading="lazy"><span data-i18n="cert.13">Photoshop · GeekBrains</span></div>
+      <div class="cert" data-full="images/originals/photoplay.jpg"><img src="images/thumbnails/photoplay.jpg" alt="Работа с моделью" loading="lazy"><span data-i18n="cert.14">Работа с моделью · Photoplay 2015</span></div>
     </div>
   </section>
 
   <section>
-    <div class="sh"><h2>Технологии</h2></div>
+    <div class="sh"><h2 data-i18n="sec.tech">Технологии</h2></div>
     <div class="skills">
       <dl class="sk-group">
-        <dt>Основное</dt>
+        <dt data-i18n="tech.core">Основное</dt>
         <dd><span>Python</span><span>aiogram</span><span>Telethon</span><span>FastAPI</span><span>C / C++</span><span>SQL</span><span>Bash</span></dd>
       </dl>
       <dl class="sk-group">
-        <dt>Встраиваемые</dt>
-        <dd><span>ESP32-S3</span><span>STM32</span><span>UART</span><span>SPI</span><span>I2S</span><span>TMC2209</span><span>Klipper</span><span>3D-печать</span><span>OpenWrt</span></dd>
+        <dt data-i18n="tech.embedded">Встраиваемые</dt>
+        <dd><span>ESP32-S3</span><span>STM32</span><span>UART</span><span>SPI</span><span>I2S</span><span>TMC2209</span><span>Klipper</span><span>3D printing</span><span>OpenWrt</span></dd>
       </dl>
       <dl class="sk-group">
-        <dt>Инфраструктура</dt>
+        <dt data-i18n="tech.infra">Инфраструктура</dt>
         <dd><span>Debian</span><span>systemd</span><span>Docker</span><span>nginx</span><span>Git</span></dd>
       </dl>
       <dl class="sk-group">
-        <dt>Мобильное</dt>
+        <dt data-i18n="tech.mobile">Мобильное</dt>
         <dd><span>Kotlin</span><span>Jetpack Compose</span><span>Media3</span><span>Swift</span><span>Xcode</span></dd>
       </dl>
       <dl class="sk-group">
-        <dt>Графика и чертёж</dt>
-        <dd><span>Photoshop</span><span>SketchUp</span><span>AutoCAD</span><span>КОМПАС-3D</span></dd>
+        <dt data-i18n="tech.graphics">Графика и чертёж</dt>
+        <dd><span>Photoshop</span><span>SketchUp</span><span>AutoCAD</span><span>KOMPAS-3D</span></dd>
       </dl>
       <dl class="sk-group past">
-        <dt>Раньше работал с</dt>
+        <dt data-i18n="tech.past">Раньше работал с</dt>
         <dd>
           <span>HTML</span><span>CSS</span><span>JavaScript</span><span>jQuery</span><span>PHP</span>
           <span>MySQL</span><span>WordPress</span><span>Bootstrap</span><span>SASS / SCSS</span>
@@ -655,114 +671,162 @@
   </section>
 
   <section>
-    <div class="sh"><h2>Образование</h2></div>
+    <div class="sh"><h2 data-i18n="sec.edu">Образование</h2></div>
     <div class="edu">
       <div class="edu-row">
         <span class="y">2026</span>
         <div>
-          <h3>ИИ-агенты на практике · ИИ-агенты для создания продуктов</h3>
-          <p>ПродСовет — <b>две программы, 26 уроков</b>: запуск агента и рабочая среда, skills и MCP, терминал и Git, безопасность, память, деплой и приём оплат</p>
+          <h3 data-i18n="edu1.t">ИИ-агенты на практике · ИИ-агенты для создания продуктов</h3>
+          <p data-i18n-html="edu1.d">ПродСовет — <b>две программы, 26 уроков</b>: запуск агента и рабочая среда, skills и MCP, терминал и Git, безопасность, память, деплой и приём оплат</p>
         </div>
       </div>
       <div class="edu-row">
         <span class="y">2020</span>
         <div>
-          <h3>Основы Swift · Swift Advanced · Git · Soft Skills</h3>
-          <p>Нетология — <b>четыре программы</b>, сертификаты в разделе выше</p>
+          <h3 data-i18n="edu2.t">Основы Swift · Swift Advanced · Git · Soft Skills</h3>
+          <p data-i18n-html="edu2.d">Нетология — <b>четыре программы</b>, сертификаты в разделе выше</p>
         </div>
       </div>
       <div class="edu-row">
         <span class="y">2016</span>
         <div>
-          <h3>Git · HTML &amp; CSS · PHP</h3>
-          <p>GeekBrains — <b>три программы</b></p>
+          <h3 data-i18n="edu3.t">Git · HTML &amp; CSS · PHP</h3>
+          <p data-i18n-html="edu3.d">GeekBrains — <b>три программы</b></p>
         </div>
       </div>
       <div class="edu-row">
         <span class="y">2015</span>
         <div>
-          <h3>Работа с моделью</h3>
-          <p>Школа современной фотографии «Photoplay»</p>
+          <h3 data-i18n="edu4.t">Работа с моделью</h3>
+          <p data-i18n-html="edu4.d">Школа современной фотографии «Photoplay»</p>
         </div>
       </div>
       <div class="edu-row">
         <span class="y">2011</span>
         <div>
-          <h3>Инженер автомобилестроения</h3>
-          <p>Московский государственный технический университет «МАМИ» — <b>высшее</b></p>
+          <h3 data-i18n="edu5.t">Инженер автомобилестроения</h3>
+          <p data-i18n-html="edu5.d">Московский государственный технический университет «МАМИ» — <b>высшее</b></p>
         </div>
       </div>
       <div class="edu-row">
         <span class="y">2006</span>
         <div>
-          <h3>Автомеханик</h3>
-          <p>ПТУ №89</p>
+          <h3 data-i18n="edu6.t">Автомеханик</h3>
+          <p data-i18n-html="edu6.d">ПТУ №89</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="game">
-    <div class="sh"><span class="num">05</span><h2>Развлечение</h2></div>
+    <div class="sh"><span class="num">05</span><h2 data-i18n="sec.game">Развлечение</h2></div>
     <button class="play" id="openGame" type="button">
-      <span class="pg">логика</span>
-      <h3>Угадай число</h3>
-      <p>НЛО загадывает число от 1 до 100 и подсказывает, в какую сторону двигаться. Открывается здесь же, никуда не уводит.</p>
-      <span class="pcta">открыть →</span>
+      <span class="pg" data-i18n="game.badge">логика</span>
+      <h3 data-i18n="game.title">Угадай число</h3>
+      <p data-i18n="game.desc">НЛО загадывает число от 1 до 100 и подсказывает, в какую сторону двигаться. Открывается здесь же, никуда не уводит.</p>
+      <span class="pcta" data-i18n="game.cta">открыть →</span>
     </button>
   </section>
 
   <div class="contact" id="contact">
-    <div class="sh"><span class="num">06</span><h2>Связаться</h2></div>
-    <p class="big">Открыт к задачам по встраиваемым системам, ботам и автоматизации. Пишите — <a href="https://t.me/here_we_bot_again">в&nbsp;Telegram</a></p>
+    <div class="sh"><span class="num">06</span><h2 data-i18n="sec.contact">Связаться</h2></div>
+    <p class="big" data-i18n-html="contact.big">Открыт к задачам по встраиваемым системам, ботам и автоматизации. Пишите — <a href="https://t.me/here_we_bot_again">в&nbsp;Telegram</a></p>
   </div>
 
   <footer>
-    <span>© 2026 · Андрей Цветков</span>
-    <span>Пью кофе. И просто живу эту жизнь.</span>
+    <span data-i18n="foot.name">© 2026 · Андрей Цветков</span>
+    <span data-i18n="foot.quote">Пью кофе. И просто живу эту жизнь.</span>
   </footer>
 
 </div>
 
 <div class="modal" id="gameModal" aria-hidden="true">
   <div class="mbox" id="mbox" role="dialog" aria-modal="true" aria-labelledby="gt">
-    <button class="mclose" id="closeGame" type="button" aria-label="Закрыть">✕</button>
-    <p class="mkind">01 / логика</p>
-    <h3 class="mttl" id="gt">Угадай число</h3>
-    <p class="mdesc">НЛО загадало число от 1 до 100. Введи догадку.</p>
+    <button class="mclose" id="closeGame" type="button" aria-label="Закрыть" data-i18n-label="a11y.close">✕</button>
+    <p class="mkind" data-i18n="game.mkind">01 / логика</p>
+    <h3 class="mttl" id="gt" data-i18n="game.title">Угадай число</h3>
+    <p class="mdesc" data-i18n="game.mdesc">НЛО загадало число от 1 до 100. Введи догадку.</p>
     <div class="mfield">
       <input id="guessInput" type="number" min="1" max="100" inputmode="numeric" placeholder="1–100" autocomplete="off">
-      <button id="guessBtn" type="button">Проверить</button>
+      <button id="guessBtn" type="button" data-i18n="game.check">Проверить</button>
     </div>
     <p class="mmsg" id="guessMsg">Попыток: 0</p>
     <div class="mrow">
       <span class="mstat" id="guessStat">диапазон 1–100</span>
-      <button id="resetBtn" class="mghost" type="button">Заново</button>
+      <button id="resetBtn" class="mghost" type="button" data-i18n="game.reset">Заново</button>
     </div>
 
     <div class="win" id="winBox">
       <p class="wkind" id="winKind">сигнал захвачен</p>
-      <p class="wt">Число найдено</p>
+      <p class="wt" data-i18n="game.wt">Число найдено</p>
       <p class="wnum" id="winNum">0</p>
       <p class="ws" id="winSub">Попыток: 0</p>
-      <button id="againBtn" class="again" type="button">Играть снова</button>
+      <button id="againBtn" class="again" type="button" data-i18n="game.again">Играть снова</button>
     </div>
   </div>
 </div>
 
-<div class="lb" id="lb"><span class="x">ESC / клик — закрыть</span><img id="lbimg" alt=""></div>
+<div class="lb" id="lb"><span class="x" data-i18n="lb.hint">ESC / клик — закрыть</span><img id="lbimg" alt=""></div>
 
 <audio id="egg1" src="sounds/nbz.mp3" preload="none"></audio>
 <audio id="egg2" src="sounds/trud.mp3" preload="none"></audio>
 <audio id="egg3" src="sounds/nikto.mp3" preload="none"></audio>
 
+<script src="i18n.js"></script>
 <script>
 (function(){
+  /* ---------- язык ---------- */
+  var LANGS = ['ru','en','de','fr','es','zh','ja'];
+  var curLang = 'ru';
+
+  function pickLang(){
+    var saved = null;
+    try { saved = localStorage.getItem('ac-lang'); } catch(e){}
+    if (saved && LANGS.indexOf(saved) >= 0) return saved;
+    var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++){
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (LANGS.indexOf(code) >= 0) return code;
+    }
+    return 'en';
+  }
+  function t(key, vars){
+    var dict = (window.I18N && window.I18N[curLang]) || {};
+    var s = dict[key] !== undefined ? dict[key] : ((window.I18N && window.I18N.ru) || {})[key];
+    if (s === undefined) return '';
+    if (vars) for (var v in vars) s = s.split('{' + v + '}').join(vars[v]);
+    return s;
+  }
+  function applyLang(lang){
+    if (LANGS.indexOf(lang) < 0) lang = 'en';
+    curLang = lang;
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('ac-lang', lang); } catch(e){}
+    var dict = (window.I18N && window.I18N[lang]) || {};
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el){
+      var k = el.getAttribute('data-i18n');
+      if (dict[k] !== undefined) el.textContent = dict[k];
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-html]'), function(el){
+      var k = el.getAttribute('data-i18n-html');
+      if (dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-label]'), function(el){
+      var k = el.getAttribute('data-i18n-label');
+      if (dict[k] !== undefined) el.setAttribute('aria-label', dict[k]);
+    });
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    var sel = document.getElementById('langSel');
+    if (sel) sel.value = lang;
+    resetGame();
+  }
+
   /* пасхалка: 5, 10, 15 клик по имени — без визуальных подсказок */
   var plate = document.getElementById('name'), n = 0;
   var eggs = ['egg1','egg2','egg3'].map(function(id){ return document.getElementById(id); });
   eggs.forEach(function(a){ if(a) a.volume = 0.4; });
   plate.addEventListener('click', function(){
+    if (curLang !== 'ru') return;   /* пасхалка живёт только в русской версии */
     n++;
     if (n === 5 || n === 10 || n === 15) {
       var a = eggs[n === 5 ? 0 : n === 10 ? 1 : 2];
@@ -801,7 +865,7 @@
     gMsg.textContent = text;
     gMsg.className = 'mmsg' + (cls ? ' ' + cls : '');
   }
-  function stat(){ gStat.textContent = 'диапазон ' + lo + '–' + hi; }
+  function stat(){ gStat.textContent = t('game.range', { lo: lo, hi: hi }); }
   function flash(){
     mbox.classList.add('glitch');
     if (mttl) mttl.classList.add('glitch');
@@ -845,8 +909,9 @@
     mbox.classList.remove('won', 'jackpot');
     modal.classList.remove('pulse');
     winNum.classList.remove('jackpot');
-    winKind.textContent = 'сигнал захвачен';
-    say('Попыток: 0'); stat();
+    winKind.textContent = t('game.wkind');
+    winSub.textContent = t('game.tries', { n: 0 });
+    say(t('game.tries', { n: 0 })); stat();
     flash();
     setTimeout(function(){ try { gIn.focus(); } catch(e){} }, 80);
   }
@@ -863,7 +928,7 @@
   function check(){
     if (over) return;
     var v = parseInt(gIn.value, 10);
-    if (!v || v < 1 || v > 100) { say('Нужно целое число от 1 до 100', 'lo'); shake(); return; }
+    if (!v || v < 1 || v > 100) { say(t('game.bad'), 'lo'); shake(); return; }
     tries++;
     if (v === target) {
       over = true;
@@ -871,8 +936,8 @@
       mbox.classList.add('won');
 
       if (tries === 1) {
-        winKind.textContent = 'первая попытка';
-        winSub.textContent = 'С первой попытки. НЛО в шоке.';
+        winKind.textContent = t('game.jackpot.kind');
+        winSub.textContent = t('game.jackpot.sub');
         winNum.classList.add('jackpot');
         mbox.classList.add('jackpot');
         modal.classList.add('pulse');
@@ -882,8 +947,8 @@
           modal.classList.remove('pulse');
         }, 1300);
       } else {
-        winKind.textContent = 'сигнал захвачен';
-        winSub.textContent = 'Попыток: ' + tries + ' · диапазон закрыт';
+        winKind.textContent = t('game.wkind');
+        winSub.textContent = t('game.wsub', { n: tries });
         winNum.classList.remove('jackpot');
       }
 
@@ -892,13 +957,13 @@
     }
     if (v < target) {
       if (v >= lo) lo = v + 1;
-      say('Больше. Попыток: ' + tries, 'hi');
+      say(t('game.bigger', { n: tries }), 'hi');
     } else {
       if (v <= hi) hi = v - 1;
-      say('Меньше. Попыток: ' + tries, 'lo');
+      say(t('game.smaller', { n: tries }), 'lo');
     }
     stat();
-    if (lo === hi) say('Осталось одно число: ' + lo + '. Попыток: ' + tries, 'hi');
+    if (lo === hi) say(t('game.one', { n: lo, t: tries }), 'hi');
     gIn.value = ''; gIn.focus();
   }
 
@@ -909,7 +974,10 @@
   gBtn.addEventListener('click', check);
   gIn.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
   modal.addEventListener('click', function(e){ if (e.target === modal) closeGame(); });
-  resetGame();
+  var langSel = document.getElementById('langSel');
+  if (langSel) langSel.addEventListener('change', function(){ applyLang(this.value); });
+
+  applyLang(pickLang());
 
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') { close(); closeGame(); }
