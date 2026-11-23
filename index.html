@@ -13,17 +13,22 @@
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--bg)}
   body{
-    margin:0;color:var(--fg);background:var(--bg);
+    margin:0;color:var(--fg);
     font-family:"Segoe UI",Roboto,-apple-system,"Helvetica Neue","Liberation Sans",Arial,sans-serif;
-    font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+    font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased
+  }
+  /* фон прибит к вьюпорту: background-attachment:fixed игнорируется на мобильных,
+     поэтому сетка и свечение живут на фиксированном слое */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     background-image:
       radial-gradient(900px 420px at 78% -12%, rgba(53,230,224,.07), transparent 62%),
       linear-gradient(rgba(20,29,37,.45) 1px, transparent 1px),
       linear-gradient(90deg, rgba(20,29,37,.45) 1px, transparent 1px);
     background-size:auto, 100% 64px, 64px 100%;
-    background-attachment: fixed;
+    background-repeat:no-repeat, repeat, repeat
   }
   .wrap{max-width:960px;margin:0 auto;padding:0 24px}
   a{color:inherit}
