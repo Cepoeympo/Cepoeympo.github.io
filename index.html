@@ -36,10 +36,10 @@
     font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase
   }
   .nav .mark{color:var(--cy);text-decoration:none}
-  .nav ul{display:flex;gap:20px;margin:0;padding:0;list-style:none;flex-wrap:wrap}
+  .nav ul{display:flex;gap:20px;margin:0 0 0 auto;padding:0;list-style:none;flex-wrap:wrap}
   .nav a{color:var(--dim);text-decoration:none;transition:color .15s}
   .nav a:hover{color:var(--cy)}
-  .nav .lang{position:relative;margin-left:auto}
+  .nav .lang{position:relative;margin-left:22px;flex:0 0 auto}
   .lang-btn{
     background:transparent;border:1px solid var(--line-hi);color:var(--dim);
     font-family:var(--mono),"Noto Sans CJK SC","Hiragino Sans","Yu Gothic",sans-serif;
@@ -51,12 +51,12 @@
     background-size:4px 4px,4px 4px;background-repeat:no-repeat
   }
   .lang-btn:hover,.lang-btn:focus,.lang.open .lang-btn{color:var(--cy);border-color:var(--cy)}
-  .lang-menu{
+  .nav .lang-menu{
     display:none;position:absolute;right:0;top:calc(100% + 7px);z-index:200;
     margin:0;padding:4px;list-style:none;min-width:100%;
     background:#0a0e12;border:1px solid var(--line-hi);box-shadow:0 12px 32px rgba(0,0,0,.55)
   }
-  .lang.open .lang-menu{display:block}
+  .nav .lang.open .lang-menu{display:block}
   .lang-menu li{
     padding:7px 14px;
     font-family:var(--mono),"Noto Sans CJK SC","Hiragino Sans","Yu Gothic",sans-serif;
