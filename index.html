@@ -39,18 +39,32 @@
   .nav ul{display:flex;gap:20px;margin:0;padding:0;list-style:none;flex-wrap:wrap}
   .nav a{color:var(--dim);text-decoration:none;transition:color .15s}
   .nav a:hover{color:var(--cy)}
-  .lang{
+  .nav .lang{position:relative;margin-left:auto}
+  .lang-btn{
     background:transparent;border:1px solid var(--line-hi);color:var(--dim);
-    font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:5px 20px 5px 8px;
-    cursor:pointer;outline:none;transition:color .15s,border-color .15s;appearance:none;
-    -webkit-appearance:none;text-align:center;
-    background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),
-                     linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+    font-family:var(--mono),"Noto Sans CJK SC","Hiragino Sans","Yu Gothic",sans-serif;
+    font-size:11px;letter-spacing:.14em;padding:5px 20px 5px 9px;
+    cursor:pointer;outline:none;transition:color .15s,border-color .15s;
+    background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+                     linear-gradient(135deg,currentColor 50%,transparent 50%);
     background-position:calc(100% - 10px) 50%, calc(100% - 6px) 50%;
     background-size:4px 4px,4px 4px;background-repeat:no-repeat
   }
-  .lang:hover,.lang:focus{color:var(--cy);border-color:var(--cy)}
-  .lang option{background:#0a0e12;color:var(--fg)}
+  .lang-btn:hover,.lang-btn:focus,.lang.open .lang-btn{color:var(--cy);border-color:var(--cy)}
+  .lang-menu{
+    display:none;position:absolute;right:0;top:calc(100% + 7px);z-index:200;
+    margin:0;padding:4px;list-style:none;min-width:100%;
+    background:#0a0e12;border:1px solid var(--line-hi);box-shadow:0 12px 32px rgba(0,0,0,.55)
+  }
+  .lang.open .lang-menu{display:block}
+  .lang-menu li{
+    padding:7px 14px;
+    font-family:var(--mono),"Noto Sans CJK SC","Hiragino Sans","Yu Gothic",sans-serif;
+    font-size:11px;letter-spacing:.14em;
+    color:var(--dim);cursor:pointer;white-space:nowrap;transition:background .12s,color .12s
+  }
+  .lang-menu li:hover,.lang-menu li:focus{background:rgba(255,47,126,.22);color:#fff;outline:none}
+  .lang-menu li[aria-selected="true"]{color:var(--mag)}
 
   /* ---------- hero ---------- */
   .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
@@ -64,6 +78,10 @@
   .plate h1{
     margin:0;font-family:var(--mono);font-size:clamp(19px,3.2vw,27px);font-weight:700;
     letter-spacing:.3em;text-transform:uppercase;line-height:1.15;color:#eef7f9
+  }
+  .plate h1 .nm-en{
+    display:block;margin-top:7px;font-size:.5em;font-weight:600;
+    letter-spacing:.24em;color:var(--mid)
   }
   .tagline{margin:0 0 14px;font-size:clamp(17px,2.4vw,22px);line-height:1.4;color:var(--mid);max-width:30ch}
   .tagline b{color:var(--cy);font-weight:600}
@@ -383,10 +401,6 @@
 
   <nav class="nav">
     <a class="mark" href="#top">ac://</a>
-    <select class="lang" id="langSel" aria-label="Language">
-      <option value="ru">RU</option><option value="en">EN</option><option value="de">DE</option>
-      <option value="fr">FR</option><option value="es">ES</option><option value="zh">中文</option><option value="ja">日本語</option>
-    </select>
     <ul>
       <li><a href="#about" data-i18n="nav.about">01 профиль</a></li>
       <li><a href="#projects" data-i18n="nav.projects">02 проекты</a></li>
@@ -395,13 +409,25 @@
       <li><a href="#game" data-i18n="nav.game">05 игра</a></li>
       <li><a href="#contact" data-i18n="nav.contact">06 контакт</a></li>
     </ul>
+    <div class="lang" id="langBox">
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">RU</button>
+      <ul class="lang-menu" id="langMenu" role="listbox">
+        <li role="option" data-lang="ru">RU</li>
+        <li role="option" data-lang="en">EN</li>
+        <li role="option" data-lang="de">DE</li>
+        <li role="option" data-lang="fr">FR</li>
+        <li role="option" data-lang="es">ES</li>
+        <li role="option" data-lang="zh">中文</li>
+        <li role="option" data-lang="ja">日本語</li>
+      </ul>
+    </div>
   </nav>
 
   <header class="hero" id="top">
     <div class="hero-top">
       <img class="avatar" src="images/ava-main.jpg" alt="Андрей Цветков">
       <div style="flex:1">
-        <div class="plate" id="name"><h1 data-i18n="hero.name">Андрей Цветков</h1></div>
+        <div class="plate" id="name"><h1 data-i18n-html="hero.name">Андрей Цветков</h1></div>
         <p class="tagline" data-i18n-html="hero.tag">Железо, прошивки и боты.<br><b>Довожу до рабочего состояния.</b></p>
         <p class="intro" data-i18n="hero.intro">
           Инженер на производстве и разработчик. Пишу встраиваемое ПО, Telegram-боты,
@@ -816,8 +842,12 @@
       if (dict[k] !== undefined) el.setAttribute('aria-label', dict[k]);
     });
     if (dict['meta.title']) document.title = dict['meta.title'];
-    var sel = document.getElementById('langSel');
-    if (sel) sel.value = lang;
+    var labels = { ru:'RU', en:'EN', de:'DE', fr:'FR', es:'ES', zh:'中文', ja:'日本語' };
+    var btn = document.getElementById('langBtn');
+    if (btn) btn.textContent = labels[lang] || lang.toUpperCase();
+    Array.prototype.forEach.call(document.querySelectorAll('#langMenu li'), function(li){
+      li.setAttribute('aria-selected', li.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
     resetGame();
   }
 
@@ -974,8 +1004,27 @@
   gBtn.addEventListener('click', check);
   gIn.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); check(); } });
   modal.addEventListener('click', function(e){ if (e.target === modal) closeGame(); });
-  var langSel = document.getElementById('langSel');
-  if (langSel) langSel.addEventListener('change', function(){ applyLang(this.value); });
+  /* переключатель языка */
+  var langBox = document.getElementById('langBox');
+  var langBtn = document.getElementById('langBtn');
+  var langMenu = document.getElementById('langMenu');
+  function closeLang(){ if (langBox) langBox.classList.remove('open'); if (langBtn) langBtn.setAttribute('aria-expanded','false'); }
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = langBox.classList.toggle('open');
+      langBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    Array.prototype.forEach.call(langMenu.querySelectorAll('li'), function(li){
+      li.addEventListener('click', function(e){
+        e.stopPropagation();
+        applyLang(li.getAttribute('data-lang'));
+        closeLang();
+      });
+    });
+    document.addEventListener('click', closeLang);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLang(); });
+  }
 
   applyLang(pickLang());
 
