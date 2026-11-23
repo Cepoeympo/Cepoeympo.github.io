@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — страница не найдена</title>
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="favicon.ico">
+<style>
+  :root{
+    --bg:#05070a; --line:#141d25; --line-hi:#1f2f3a;
+    --fg:#dbe7ed; --dim:#6f8089; --mid:#9fb0ba;
+    --cy:#35e6e0; --mag:#ff2f7e; --mag-dim:#4a0e24;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--bg);-webkit-text-size-adjust:100%}
+  body{
+    margin:0;min-height:100vh;color:var(--fg);display:flex;align-items:center;
+    font-family:"Segoe UI",Roboto,-apple-system,"Helvetica Neue","Liberation Sans",Arial,sans-serif;
+    font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:
+      radial-gradient(900px 420px at 78% -12%, rgba(53,230,224,.07), transparent 62%),
+      linear-gradient(rgba(20,29,37,.45) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,29,37,.45) 1px, transparent 1px);
+    background-size:auto, 100% 64px, 64px 100%;
+    background-repeat:no-repeat, repeat, repeat
+  }
+  ::selection{background:rgba(255,47,126,.32);color:#fff}
+  main{width:100%;max-width:960px;margin:0 auto;padding:0 24px}
+  .mark{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;color:var(--cy);text-decoration:none}
+  .num{
+    font-family:var(--mono);font-size:clamp(72px,16vw,150px);line-height:.9;letter-spacing:.04em;
+    color:var(--mag);margin:34px 0 18px;text-shadow:0 0 34px rgba(255,47,126,.35);
+    animation:glitch 4.5s steps(1,end) infinite
+  }
+  @keyframes glitch{
+    0%,86%,100%{transform:none;text-shadow:0 0 34px rgba(255,47,126,.35)}
+    88%{transform:translate(-3px,1px);text-shadow:-3px 0 var(--cy),3px 0 rgba(255,47,126,.8)}
+    90%{transform:translate(2px,-1px);text-shadow:3px 0 var(--cy),-3px 0 rgba(255,47,126,.8)}
+    92%{transform:none}
+  }
+  h1{
+    margin:0 0 12px;font-family:var(--mono);font-size:clamp(17px,2.6vw,22px);
+    letter-spacing:.22em;text-transform:uppercase;color:#eef7f9
+  }
+  p.sub{margin:0 0 30px;color:var(--dim);max-width:52ch;font-size:15px}
+  a.back{
+    display:inline-block;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    text-transform:lowercase;text-decoration:none;color:var(--mag);
+    border:1px solid var(--mag-dim);padding:10px 16px;
+    transition:color .15s,border-color .15s,box-shadow .2s
+  }
+  a.back:hover{color:#fff;border-color:var(--mag);box-shadow:0 0 18px rgba(255,47,126,.22)}
+</style>
+</head>
+<body>
+<main>
+  <a class="mark" href="/">ac://</a>
+  <div class="num">404</div>
+  <h1 id="t">Страница не найдена</h1>
+  <p class="sub" id="s">Такого адреса здесь нет. Возможно, он был раньше — сайт теперь живёт одной страницей.</p>
+  <a class="back" href="/" id="b">← на главную</a>
+</main>
+<script>
+(function(){
+  var L = {
+    ru:['Страница не найдена','Такого адреса здесь нет. Возможно, он был раньше — сайт теперь живёт одной страницей.','← на главную'],
+    en:['Page not found','There is no such address here. It may have existed before — the site is a single page now.','← back to home'],
+    de:['Seite nicht gefunden','Diese Adresse gibt es hier nicht. Vielleicht gab es sie früher — die Seite besteht jetzt aus einer einzigen Seite.','← zur Startseite'],
+    fr:['Page introuvable','Cette adresse n\u2019existe pas. Elle a peut-être existé avant — le site tient désormais sur une seule page.','← retour à l\u2019accueil'],
+    es:['Página no encontrada','Esta dirección no existe. Puede que antes sí — ahora el sitio cabe en una sola página.','← volver al inicio'],
+    zh:['页面未找到','这个地址不存在。也许它曾经存在过——现在整个网站只有一个页面。','← 返回首页'],
+    ja:['ページが見つかりません','このアドレスは存在しません。以前はあったかもしれません — 今はサイトは1ページだけです。','← ホームへ']
+  };
+  var l = 'ru';
+  try { l = localStorage.getItem('ac-lang') || 'ru'; } catch(e){}
+  if (!L[l]) {
+    var n = String(navigator.language || '').toLowerCase().split('-')[0];
+    l = L[n] ? n : 'ru';
+  }
+  document.documentElement.lang = l;
+  document.title = '404 — ' + L[l][0];
+  document.getElementById('t').textContent = L[l][0];
+  document.getElementById('s').textContent = L[l][1];
+  document.getElementById('b').textContent = L[l][2];
+})();
+</script>
+</body>
+</html>
